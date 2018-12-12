@@ -1,0 +1,30 @@
+/** Musteero
+ *  Miten tehdä systeemi jossa useita geneerisiä käyttäjiä joilla voi olla olemassa useita
+ *  eri käyttäjärooleja systeemissä (esim. yhdellä käyttäjällä sekä asiakas, omistaja että admin).
+ */
+range BOOL = 0..1
+
+// Geneerinen käyttäjä joka on rekisteröitynyt sekä asiakkaana, omistajana että adminina.
+// Käyttäjän pitää kirjautumisen jälkeen valita minkä roolin hän ottaa systeemissä.
+USER = (login -> USER[1][1][1]),
+USER[cust:BOOL][keeper:BOOL][admin:BOOL] =
+          (when(cust==1)   selectCustRole   -> removeCustRole   -> USER[cust][keeper][admin]
+          |when(keeper==1) selectKeeperRole -> removeKeeperRole -> USER[cust][keeper][admin]
+          |when(admin==1)  selectAdminRole  -> removeAdminRole  -> USER[cust][keeper][admin]
+          |logout -> USER).
+
+CUSTOMER       = (selectCustRole -> CUSTOMER_STUFF),
+CUSTOMER_STUFF = (some_customer_action -> CUSTOMER_STUFF
+                 |removeCustRole -> CUSTOMER).
+
+SHOPKEEPER       = (selectKeeperRole -> SHOPKEEPER_STUFF),
+SHOPKEEPER_STUFF = (some_shopkeeper_action -> SHOPKEEPER_STUFF
+                   |removeKeeperRole -> SHOPKEEPER).
+
+ADMIN       = (selectAdminRole -> ADMIN_STUFF),
+ADMIN_STUFF = (some_admin_action -> ADMIN_STUFF
+              |removeAdminRole -> ADMIN).
+
+||USERS = (user_1:USER || user_2:USER // Kaksi eri käyttäjäinstanssia
+        || user_1::CUSTOMER || user_1::SHOPKEEPER || user_1::ADMIN // Käyttäjällä 1 on resurssi CUSTOMER, SHOPKEEPER ja ADMIN
+        || user_2::CUSTOMER || user_2::SHOPKEEPER || user_2::ADMIN). // Samoin käyttäjällä 2

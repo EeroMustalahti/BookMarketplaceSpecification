@@ -11,22 +11,22 @@ NOT_LOGGED_USER[cust:BOOL][keeper:BOOL][admin:BOOL] =
           (when(cust==1 || keeper==1 || admin==1) login -> USER[cust][keeper][admin]
           |when(cust==0)           register_as_customer -> NOT_LOGGED_USER[1][keeper][admin]),
 USER[cust:BOOL][keeper:BOOL][admin:BOOL] =
-          (when(cust==1)   selectCustRole   -> de-selectCustRole   -> USER[cust][keeper][admin]
-          |when(keeper==1) selectKeeperRole -> de-selectKeeperRole -> USER[cust][keeper][admin]
-          |when(admin==1)  selectAdminRole  -> de-selectAdminRole  -> USER[cust][keeper][admin]
+          (when(cust==1)   selectCustRole   -> deselectCustRole   -> USER[cust][keeper][admin]
+          |when(keeper==1) selectKeeperRole -> deselectKeeperRole -> USER[cust][keeper][admin]
+          |when(admin==1)  selectAdminRole  -> deselectAdminRole  -> USER[cust][keeper][admin]
           |logout -> NOT_LOGGED_USER).
 
 CUSTOMER       = (selectCustRole -> CUSTOMER_STUFF),
 CUSTOMER_STUFF = (some_customer_action -> CUSTOMER_STUFF
-                 |de-selectCustRole -> CUSTOMER).
+                 |deselectCustRole -> CUSTOMER).
 
 SHOPKEEPER       = (selectKeeperRole -> SHOPKEEPER_STUFF),
 SHOPKEEPER_STUFF = (some_shopkeeper_action -> SHOPKEEPER_STUFF
-                   |de-selectKeeperRole -> SHOPKEEPER).
+                   |deselectKeeperRole -> SHOPKEEPER).
 
 ADMIN       = (selectAdminRole -> ADMIN_STUFF),
 ADMIN_STUFF = (some_admin_action -> ADMIN_STUFF
-              |de-selectAdminRole -> ADMIN).
+              |deselectAdminRole -> ADMIN).
 
 ||USERS = (user_1:NOT_LOGGED_USER(1,1,1)
         || user_2:NOT_LOGGED_USER(1,1,1)

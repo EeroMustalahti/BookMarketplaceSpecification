@@ -1,0 +1,2221 @@
+(INTERMEDIATE_VERSION 0.9)
+(Specification exercise
+  (Location "exercise.dc" 1)
+  (IMPORTS)
+
+  (IMPORTING_DEPENDINGS
+  )
+
+  (DataPart
+    (Class System
+      (ID exercise 106)
+      (Location "exercise.dc" 6)
+      (Renamed false)
+      (FIELDS
+        (Reference _exercise_reference_to_Customer__GenName0
+          (ID exercise 100)
+          (Location "exercise.dc" 3)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Customer (ID exercise 145))
+          )
+          (SOURCE "          ")
+        )
+        (Variable active_customer
+          (ID exercise 101)
+          (CONSTANT false)
+          (Location "exercise.dc" 3)
+          (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Reference _exercise_reference_to_Shopkeeper__GenName1
+          (ID exercise 102)
+          (Location "exercise.dc" 4)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Shopkeeper (ID exercise 150))
+          )
+          (SOURCE "          ")
+        )
+        (Variable active_shopkeeper
+          (ID exercise 103)
+          (CONSTANT false)
+          (Location "exercise.dc" 4)
+          (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Reference _exercise_reference_to_Admin__GenName2
+          (ID exercise 104)
+          (Location "exercise.dc" 5)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Admin (ID exercise 155))
+          )
+          (SOURCE "          ")
+        )
+        (Variable active_admin
+          (ID exercise 105)
+          (CONSTANT false)
+          (Location "exercise.dc" 5)
+          (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 106)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 285)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+    (Class Bookstore
+      (ID exercise 109)
+      (Location "exercise.dc" 10)
+      (Renamed false)
+      (FIELDS
+        (Reference _exercise_reference_to_Shopkeeper__GenName3
+          (ID exercise 107)
+          (Location "exercise.dc" 9)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Shopkeeper (ID exercise 150))
+          )
+          (SOURCE "          ")
+        )
+        (Variable owner
+          (ID exercise 108)
+          (CONSTANT false)
+          (Location "exercise.dc" 9)
+          (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 109)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 286)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+    (Class Cart
+      (ID exercise 122)
+      (Location "exercise.dc" 17)
+      (Renamed false)
+      (FIELDS
+        (Reference _exercise_reference_to_Book__GenName4
+          (ID exercise 110)
+          (Location "exercise.dc" 13)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Book (ID exercise 138))
+          )
+          (SOURCE "          ")
+        )
+        (Variable book_1
+          (ID exercise 111)
+          (CONSTANT false)
+          (Location "exercise.dc" 13)
+          (TYPE _exercise_reference_to_Book__GenName4 (ID exercise 110))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Reference _exercise_reference_to_Book__GenName5
+          (ID exercise 112)
+          (Location "exercise.dc" 14)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Book (ID exercise 138))
+          )
+          (SOURCE "          ")
+        )
+        (Variable book_2
+          (ID exercise 113)
+          (CONSTANT false)
+          (Location "exercise.dc" 14)
+          (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 112))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Reference _exercise_reference_to_Book__GenName6
+          (ID exercise 114)
+          (Location "exercise.dc" 15)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Book (ID exercise 138))
+          )
+          (SOURCE "          ")
+        )
+        (Variable book_3
+          (ID exercise 115)
+          (CONSTANT false)
+          (Location "exercise.dc" 15)
+          (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 114))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Record first
+          (ID exercise 117)
+          (Location "exercise.dc" 16)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 117)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 287)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record second
+          (ID exercise 118)
+          (Location "exercise.dc" 16)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 118)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 288)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record third
+          (ID exercise 119)
+          (Location "exercise.dc" 16)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 119)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 289)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record full
+          (ID exercise 120)
+          (Location "exercise.dc" 16)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 120)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 290)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Enumeration _exerciseEnumeration_GenName7
+          (ID exercise 116)
+          (Location "exercise.dc" 16)
+          (Renamed false)
+          (VALUES
+            (TYPE first (ID exercise 117))
+            (TYPE second (ID exercise 118))
+            (TYPE third (ID exercise 119))
+            (TYPE full (ID exercise 120))
+          )
+          (SOURCE "          ")
+        )
+        (Variable next_empty
+          (ID exercise 121)
+          (CONSTANT false)
+          (Location "exercise.dc" 16)
+          (TYPE _exerciseEnumeration_GenName7 (ID exercise 116))
+          (Aggregate
+            (Location "exercise.dc" 16)
+            (TYPE first (ID exercise 117))
+            (ACTUALS
+            )
+          )
+        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 122)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 291)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+    (Class Book
+      (ID exercise 138)
+      (Location "exercise.dc" 24)
+      (Renamed false)
+      (FIELDS
+        (Reference _exercise_reference_to_Bookstore__GenName8
+          (ID exercise 123)
+          (Location "exercise.dc" 20)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Bookstore (ID exercise 109))
+          )
+          (SOURCE "          ")
+        )
+        (Variable owned_bookstore
+          (ID exercise 124)
+          (CONSTANT false)
+          (Location "exercise.dc" 20)
+          (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Reference _exercise_reference_to_Customer__GenName9
+          (ID exercise 125)
+          (Location "exercise.dc" 21)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Customer (ID exercise 145))
+          )
+          (SOURCE "          ")
+        )
+        (Variable owned_customer
+          (ID exercise 126)
+          (CONSTANT false)
+          (Location "exercise.dc" 21)
+          (TYPE _exercise_reference_to_Customer__GenName9 (ID exercise 125))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Reference _exercise_reference_to_Cart__GenName10
+          (ID exercise 127)
+          (Location "exercise.dc" 22)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Cart (ID exercise 122))
+          )
+          (SOURCE "          ")
+        )
+        (Variable in_cart
+          (ID exercise 128)
+          (CONSTANT false)
+          (Location "exercise.dc" 22)
+          (TYPE _exercise_reference_to_Cart__GenName10 (ID exercise 127))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+        (Record OfficerWithAGoal
+          (ID exercise 130)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 130)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 292)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record EnemyWithVigor
+          (ID exercise 131)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 131)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 293)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record GirlsOfThePrison
+          (ID exercise 132)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 132)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 294)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record GuardiansOfHell
+          (ID exercise 133)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 133)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 295)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record AliensAndBandits
+          (ID exercise 134)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 134)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 296)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record AchievementOfDespair
+          (ID exercise 135)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 135)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 297)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record BorderWithHonor
+          (ID exercise 136)
+          (Location "exercise.dc" 23)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 136)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 298)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Enumeration _exerciseEnumeration_GenName11
+          (ID exercise 129)
+          (Location "exercise.dc" 23)
+          (Renamed false)
+          (VALUES
+            (TYPE OfficerWithAGoal (ID exercise 130))
+            (TYPE EnemyWithVigor (ID exercise 131))
+            (TYPE GirlsOfThePrison (ID exercise 132))
+            (TYPE GuardiansOfHell (ID exercise 133))
+            (TYPE AliensAndBandits (ID exercise 134))
+            (TYPE AchievementOfDespair (ID exercise 135))
+            (TYPE BorderWithHonor (ID exercise 136))
+          )
+          (SOURCE "          ")
+        )
+        (Variable name
+          (ID exercise 137)
+          (CONSTANT false)
+          (Location "exercise.dc" 23)
+          (TYPE _exerciseEnumeration_GenName11 (ID exercise 129))
+          (Aggregate
+            (Location "exercise.dc" 23)
+            (TYPE OfficerWithAGoal (ID exercise 130))
+            (ACTUALS
+            )
+          )
+        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 138)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 299)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+    (Class Customer
+      (ID exercise 145)
+      (Location "exercise.dc" 30)
+      (Renamed false)
+      (FIELDS
+        (Record yes
+          (ID exercise 140)
+          (Location "exercise.dc" 28)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 140)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 300)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record no
+          (ID exercise 141)
+          (Location "exercise.dc" 28)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 141)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 301)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Enumeration _exerciseEnumeration_GenName12
+          (ID exercise 139)
+          (Location "exercise.dc" 28)
+          (Renamed false)
+          (VALUES
+            (TYPE yes (ID exercise 140))
+            (TYPE no (ID exercise 141))
+          )
+          (SOURCE "          ")
+        )
+        (Variable registered
+          (ID exercise 142)
+          (CONSTANT false)
+          (Location "exercise.dc" 28)
+          (TYPE _exerciseEnumeration_GenName12 (ID exercise 139))
+          (Aggregate
+            (Location "exercise.dc" 28)
+            (TYPE yes (ID exercise 140))
+            (ACTUALS
+            )
+          )
+        )
+        (Reference _exercise_reference_to_Book__GenName13
+          (ID exercise 143)
+          (Location "exercise.dc" 29)
+          (Renamed false)
+          (REFCLASS
+            (TYPE Book (ID exercise 138))
+          )
+          (SOURCE "          ")
+        )
+        (Variable browsing_currently
+          (ID exercise 144)
+          (CONSTANT false)
+          (Location "exercise.dc" 29)
+          (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+          (ReferenceLiteral null
+            (TYPE RefToAnyType (ID _emptyLayer 6))
+          )        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 145)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 302)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+    (Class Shopkeeper
+      (ID exercise 150)
+      (Location "exercise.dc" 33)
+      (Renamed false)
+      (FIELDS
+        (Record no
+          (ID exercise 147)
+          (Location "exercise.dc" 32)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 147)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 303)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record yes
+          (ID exercise 148)
+          (Location "exercise.dc" 32)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 148)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 304)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Enumeration _exerciseEnumeration_GenName14
+          (ID exercise 146)
+          (Location "exercise.dc" 32)
+          (Renamed false)
+          (VALUES
+            (TYPE no (ID exercise 147))
+            (TYPE yes (ID exercise 148))
+          )
+          (SOURCE "          ")
+        )
+        (Variable in_use
+          (ID exercise 149)
+          (CONSTANT false)
+          (Location "exercise.dc" 32)
+          (TYPE _exerciseEnumeration_GenName14 (ID exercise 146))
+          (Aggregate
+            (Location "exercise.dc" 32)
+            (TYPE no (ID exercise 147))
+            (ACTUALS
+            )
+          )
+        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 150)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 305)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+    (Class Admin
+      (ID exercise 155)
+      (Location "exercise.dc" 37)
+      (Renamed false)
+      (FIELDS
+        (Record no
+          (ID exercise 152)
+          (Location "exercise.dc" 36)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 152)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 306)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Record yes
+          (ID exercise 153)
+          (Location "exercise.dc" 36)
+          (Frozen false)
+          (Renamed false)
+          (FIELDS
+          )
+          (INHERITS
+          )
+          (Distinct false)
+          (BASEIDS
+            (ID exercise 153)
+          )
+          (Excluded false)
+          (History 
+            (ID exercise 307)
+            (HistoryBases 
+            )
+          )
+          (SOURCE "")
+        )
+        (Enumeration _exerciseEnumeration_GenName15
+          (ID exercise 151)
+          (Location "exercise.dc" 36)
+          (Renamed false)
+          (VALUES
+            (TYPE no (ID exercise 152))
+            (TYPE yes (ID exercise 153))
+          )
+          (SOURCE "          ")
+        )
+        (Variable in_use
+          (ID exercise 154)
+          (CONSTANT false)
+          (Location "exercise.dc" 36)
+          (TYPE _exerciseEnumeration_GenName15 (ID exercise 151))
+          (Aggregate
+            (Location "exercise.dc" 36)
+            (TYPE no (ID exercise 152))
+            (ACTUALS
+            )
+          )
+        )
+      )
+      (INHERITS
+      )
+      (Distinct false)
+      (BASEIDS
+        (ID exercise 155)
+      )
+      (Excluded false)
+      (History 
+        (ID exercise 308)
+        (HistoryBases 
+        )
+      )
+      (SOURCE "")
+    )
+  )
+  (FunctionalityList
+    (Action insert_book_to_cart
+      (ID exercise 176)
+      (Location "exercise.dc" 52)
+      (SIGNATURE insert_book_to_cart(Book, Cart, Customer, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT book
+          (ID exercise 156)
+          (Location "exercise.dc" 40)
+          (TYPE Book (ID exercise 138))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 156)
+          )
+        )
+        (PARTICIPANT cart
+          (ID exercise 157)
+          (Location "exercise.dc" 40)
+          (TYPE Cart (ID exercise 122))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 157)
+          )
+        )
+        (PARTICIPANT customer
+          (ID exercise 158)
+          (Location "exercise.dc" 40)
+          (TYPE Customer (ID exercise 145))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 158)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 159)
+          (Location "exercise.dc" 40)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 159)
+          )
+        )
+      )
+      (History 
+        (ID exercise 176)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 161)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 156)
+                  (ID exercise 128)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Cart__GenName10 (ID exercise 127))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 162)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 156)
+                  (ID exercise 126)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName9 (ID exercise 125))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 163)
+            (VariableReference
+              (REFERENCES
+                (ID exercise 158)
+                (ID exercise 142)
+                (ID exercise 140)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 164)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 159)
+                  (ID exercise 101)
+                )
+                (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 158)
+                )
+                (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                (ORIGINAL_TYPE
+                  (TYPE Customer (ID exercise 145))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 165)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 158)
+                  (ID exercise 144)
+                )
+                (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 156)
+                )
+                (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+                (ORIGINAL_TYPE
+                  (TYPE Book (ID exercise 138))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (CONDITIONAL_STATEMENT
+          (ID exercise 168)
+          (CONDITION
+            (VariableReference
+              (REFERENCES
+                (ID exercise 157)
+                (ID exercise 121)
+                (ID exercise 119)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+          (BODY
+            (Assignment
+              (ID exercise 166)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 157)
+                  (ID exercise 115)
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 156)
+                )
+                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 114))
+                (ORIGINAL_TYPE
+                  (TYPE Book (ID exercise 138))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 114))
+              )
+            )
+            (Assignment
+              (ID exercise 167)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 157)
+                  (ID exercise 121)
+                )
+              )
+              (Aggregate
+                (Location "exercise.dc" 43)
+                (TYPE full (ID exercise 120))
+                (ACTUALS
+                )
+              )
+            )
+          )
+        )
+        (CONDITIONAL_STATEMENT
+          (ID exercise 171)
+          (CONDITION
+            (VariableReference
+              (REFERENCES
+                (ID exercise 157)
+                (ID exercise 121)
+                (ID exercise 118)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+          (BODY
+            (Assignment
+              (ID exercise 169)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 157)
+                  (ID exercise 113)
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 156)
+                )
+                (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 112))
+                (ORIGINAL_TYPE
+                  (TYPE Book (ID exercise 138))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 112))
+              )
+            )
+            (Assignment
+              (ID exercise 170)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 157)
+                  (ID exercise 121)
+                )
+              )
+              (Aggregate
+                (Location "exercise.dc" 46)
+                (TYPE third (ID exercise 119))
+                (ACTUALS
+                )
+              )
+            )
+          )
+        )
+        (CONDITIONAL_STATEMENT
+          (ID exercise 174)
+          (CONDITION
+            (VariableReference
+              (REFERENCES
+                (ID exercise 157)
+                (ID exercise 121)
+                (ID exercise 117)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+          (BODY
+            (Assignment
+              (ID exercise 172)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 157)
+                  (ID exercise 111)
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 156)
+                )
+                (TYPE _exercise_reference_to_Book__GenName4 (ID exercise 110))
+                (ORIGINAL_TYPE
+                  (TYPE Book (ID exercise 138))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Book__GenName4 (ID exercise 110))
+              )
+            )
+            (Assignment
+              (ID exercise 173)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 157)
+                  (ID exercise 121)
+                )
+              )
+              (Aggregate
+                (Location "exercise.dc" 49)
+                (TYPE second (ID exercise 118))
+                (ACTUALS
+                )
+              )
+            )
+          )
+        )
+        (Assignment
+          (ID exercise 175)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 156)
+              (ID exercise 128)
+            )
+          )
+          (ObjectReference
+            (REFERENCES
+              (ID exercise 157)
+            )
+            (TYPE _exercise_reference_to_Cart__GenName10 (ID exercise 127))
+            (ORIGINAL_TYPE
+              (TYPE Cart (ID exercise 122))
+            )
+          )
+          (TYPECONVERSION CONVERT_TO
+            (TYPE _exercise_reference_to_Cart__GenName10 (ID exercise 127))
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action add_book_store
+      (ID exercise 187)
+      (Location "exercise.dc" 58)
+      (SIGNATURE add_book_store(Shopkeeper, Book, Bookstore, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT shopkeeper
+          (ID exercise 177)
+          (Location "exercise.dc" 55)
+          (TYPE Shopkeeper (ID exercise 150))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 177)
+          )
+        )
+        (PARTICIPANT book
+          (ID exercise 178)
+          (Location "exercise.dc" 55)
+          (TYPE Book (ID exercise 138))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 178)
+          )
+        )
+        (PARTICIPANT bookstore
+          (ID exercise 179)
+          (Location "exercise.dc" 55)
+          (TYPE Bookstore (ID exercise 109))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 179)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 180)
+          (Location "exercise.dc" 55)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 180)
+          )
+        )
+      )
+      (History 
+        (ID exercise 187)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 182)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 178)
+                  (ID exercise 128)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Cart__GenName10 (ID exercise 127))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 183)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 178)
+                  (ID exercise 126)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName9 (ID exercise 125))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 184)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 178)
+                  (ID exercise 124)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 185)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 180)
+                  (ID exercise 103)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 177)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                (ORIGINAL_TYPE
+                  (TYPE Shopkeeper (ID exercise 150))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 186)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 178)
+              (ID exercise 124)
+            )
+          )
+          (ObjectReference
+            (REFERENCES
+              (ID exercise 179)
+            )
+            (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+            (ORIGINAL_TYPE
+              (TYPE Bookstore (ID exercise 109))
+            )
+          )
+          (TYPECONVERSION CONVERT_TO
+            (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action remove_book_store
+      (ID exercise 198)
+      (Location "exercise.dc" 62)
+      (SIGNATURE remove_book_store(Shopkeeper, Book, Bookstore, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT shopkeeper
+          (ID exercise 188)
+          (Location "exercise.dc" 59)
+          (TYPE Shopkeeper (ID exercise 150))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 188)
+          )
+        )
+        (PARTICIPANT book
+          (ID exercise 189)
+          (Location "exercise.dc" 59)
+          (TYPE Book (ID exercise 138))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 189)
+          )
+        )
+        (PARTICIPANT bookstore
+          (ID exercise 190)
+          (Location "exercise.dc" 59)
+          (TYPE Bookstore (ID exercise 109))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 190)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 191)
+          (Location "exercise.dc" 59)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 191)
+          )
+        )
+      )
+      (History 
+        (ID exercise 198)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 193)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 189)
+                  (ID exercise 128)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Cart__GenName10 (ID exercise 127))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 194)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 189)
+                  (ID exercise 126)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName9 (ID exercise 125))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 195)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 189)
+                  (ID exercise 124)
+                )
+                (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 190)
+                )
+                (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                (ORIGINAL_TYPE
+                  (TYPE Bookstore (ID exercise 109))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 196)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 191)
+                  (ID exercise 103)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 188)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                (ORIGINAL_TYPE
+                  (TYPE Shopkeeper (ID exercise 150))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 197)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 189)
+              (ID exercise 124)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+          )        )
+      )
+      (SOURCE "")
+    )
+    (Action register_customer
+      (ID exercise 203)
+      (Location "exercise.dc" 70)
+      (SIGNATURE register_customer(Customer))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT c
+          (ID exercise 199)
+          (Location "exercise.dc" 67)
+          (TYPE Customer (ID exercise 145))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 199)
+          )
+        )
+      )
+      (History 
+        (ID exercise 203)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 201)
+            (VariableReference
+              (REFERENCES
+                (ID exercise 199)
+                (ID exercise 142)
+                (ID exercise 141)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 202)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 199)
+              (ID exercise 142)
+            )
+          )
+          (Aggregate
+            (Location "exercise.dc" 69)
+            (TYPE yes (ID exercise 140))
+            (ACTUALS
+            )
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action login_customer
+      (ID exercise 212)
+      (Location "exercise.dc" 76)
+      (SIGNATURE login_customer(Customer, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT customer
+          (ID exercise 204)
+          (Location "exercise.dc" 73)
+          (TYPE Customer (ID exercise 145))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 204)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 205)
+          (Location "exercise.dc" 73)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 205)
+          )
+        )
+      )
+      (History 
+        (ID exercise 212)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 207)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 205)
+                  (ID exercise 101)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 208)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 205)
+                  (ID exercise 103)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 209)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 205)
+                  (ID exercise 105)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 210)
+            (VariableReference
+              (REFERENCES
+                (ID exercise 204)
+                (ID exercise 142)
+                (ID exercise 140)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 211)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 205)
+              (ID exercise 101)
+            )
+          )
+          (ObjectReference
+            (REFERENCES
+              (ID exercise 204)
+            )
+            (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+            (ORIGINAL_TYPE
+              (TYPE Customer (ID exercise 145))
+            )
+          )
+          (TYPECONVERSION CONVERT_TO
+            (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action login_shopkeeper
+      (ID exercise 220)
+      (Location "exercise.dc" 80)
+      (SIGNATURE login_shopkeeper(Shopkeeper, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT shopkeeper
+          (ID exercise 213)
+          (Location "exercise.dc" 77)
+          (TYPE Shopkeeper (ID exercise 150))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 213)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 214)
+          (Location "exercise.dc" 77)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 214)
+          )
+        )
+      )
+      (History 
+        (ID exercise 220)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 216)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 214)
+                  (ID exercise 101)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 217)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 214)
+                  (ID exercise 103)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 218)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 214)
+                  (ID exercise 105)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 219)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 214)
+              (ID exercise 103)
+            )
+          )
+          (ObjectReference
+            (REFERENCES
+              (ID exercise 213)
+            )
+            (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+            (ORIGINAL_TYPE
+              (TYPE Shopkeeper (ID exercise 150))
+            )
+          )
+          (TYPECONVERSION CONVERT_TO
+            (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action login_admin
+      (ID exercise 228)
+      (Location "exercise.dc" 84)
+      (SIGNATURE login_admin(Admin, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT admin
+          (ID exercise 221)
+          (Location "exercise.dc" 81)
+          (TYPE Admin (ID exercise 155))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 221)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 222)
+          (Location "exercise.dc" 81)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 222)
+          )
+        )
+      )
+      (History 
+        (ID exercise 228)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 224)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 222)
+                  (ID exercise 101)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 225)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 222)
+                  (ID exercise 103)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+          (GuardConjunct (ID exercise 226)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 222)
+                  (ID exercise 105)
+                )
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE RefToAnyType (ID _emptyLayer 6))
+              )            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 227)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 222)
+              (ID exercise 105)
+            )
+          )
+          (ObjectReference
+            (REFERENCES
+              (ID exercise 221)
+            )
+            (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+            (ORIGINAL_TYPE
+              (TYPE Admin (ID exercise 155))
+            )
+          )
+          (TYPECONVERSION CONVERT_TO
+            (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action browse_book
+      (ID exercise 235)
+      (Location "exercise.dc" 89)
+      (SIGNATURE browse_book(Customer, Book, Bookstore))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT customer
+          (ID exercise 229)
+          (Location "exercise.dc" 86)
+          (TYPE Customer (ID exercise 145))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 229)
+          )
+        )
+        (PARTICIPANT book
+          (ID exercise 230)
+          (Location "exercise.dc" 86)
+          (TYPE Book (ID exercise 138))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 230)
+          )
+        )
+        (PARTICIPANT bookstore
+          (ID exercise 231)
+          (Location "exercise.dc" 86)
+          (TYPE Bookstore (ID exercise 109))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 231)
+          )
+        )
+      )
+      (History 
+        (ID exercise 235)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 233)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 230)
+                  (ID exercise 124)
+                )
+                (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 231)
+                )
+                (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+                (ORIGINAL_TYPE
+                  (TYPE Bookstore (ID exercise 109))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Bookstore__GenName8 (ID exercise 123))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 234)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 229)
+              (ID exercise 144)
+            )
+          )
+          (ObjectReference
+            (REFERENCES
+              (ID exercise 230)
+            )
+            (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+            (ORIGINAL_TYPE
+              (TYPE Book (ID exercise 138))
+            )
+          )
+          (TYPECONVERSION CONVERT_TO
+            (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
+          )
+        )
+      )
+      (SOURCE "")
+    )
+    (Action logout_customer
+      (ID exercise 241)
+      (Location "exercise.dc" 95)
+      (SIGNATURE logout_customer(Customer, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT customer
+          (ID exercise 236)
+          (Location "exercise.dc" 92)
+          (TYPE Customer (ID exercise 145))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 236)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 237)
+          (Location "exercise.dc" 92)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 237)
+          )
+        )
+      )
+      (History 
+        (ID exercise 241)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 239)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 237)
+                  (ID exercise 101)
+                )
+                (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 236)
+                )
+                (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+                (ORIGINAL_TYPE
+                  (TYPE Customer (ID exercise 145))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 240)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 237)
+              (ID exercise 101)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
+          )        )
+      )
+      (SOURCE "")
+    )
+    (Action logout_shopkeeper
+      (ID exercise 247)
+      (Location "exercise.dc" 99)
+      (SIGNATURE logout_shopkeeper(Shopkeeper, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT shopkeeper
+          (ID exercise 242)
+          (Location "exercise.dc" 96)
+          (TYPE Shopkeeper (ID exercise 150))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 242)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 243)
+          (Location "exercise.dc" 96)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 243)
+          )
+        )
+      )
+      (History 
+        (ID exercise 247)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 245)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 243)
+                  (ID exercise 103)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 242)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+                (ORIGINAL_TYPE
+                  (TYPE Shopkeeper (ID exercise 150))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 246)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 243)
+              (ID exercise 103)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
+          )        )
+      )
+      (SOURCE "")
+    )
+    (Action logout_admin
+      (ID exercise 253)
+      (Location "exercise.dc" 103)
+      (SIGNATURE logout_admin(Admin, System))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT admin
+          (ID exercise 248)
+          (Location "exercise.dc" 100)
+          (TYPE Admin (ID exercise 155))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 248)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 249)
+          (Location "exercise.dc" 100)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 249)
+          )
+        )
+      )
+      (History 
+        (ID exercise 253)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 251)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 249)
+                  (ID exercise 105)
+                )
+                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 248)
+                )
+                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                (ORIGINAL_TYPE
+                  (TYPE Admin (ID exercise 155))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+              )
+            )
+          )
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 252)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 249)
+              (ID exercise 105)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+          )        )
+      )
+      (SOURCE "")
+    )
+  )
+)

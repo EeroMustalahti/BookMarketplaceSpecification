@@ -1,0 +1,7 @@
+instance ShopkeeperAddRemove of exercise is 
+
+
+
+  omega := +0.0;
+  deadlines := {};
+end

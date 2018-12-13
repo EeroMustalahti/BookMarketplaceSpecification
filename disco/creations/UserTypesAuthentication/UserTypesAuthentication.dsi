@@ -1,0 +1,40 @@
+instance UserTypesAuthentication of exercise is 
+
+  object System_1 of System is
+    active_customer := null;
+    active_shopkeeper := null;
+    active_admin := null;
+  end
+  object Admin_1 of Admin is
+    in_use := enum no(
+    );
+  end
+  object Shopkeeper_1 of Shopkeeper is
+    in_use := enum no(
+    );
+  end
+  object Customer_1_1 of Customer is
+    registered := enum yes(
+    );
+    browsing_currently := null;
+  end
+  object Customer_1_2 of Customer is
+    registered := enum yes(
+    );
+    browsing_currently := null;
+  end
+  object Customer_1_3 of Customer is
+    registered := enum yes(
+    );
+    browsing_currently := null;
+  end
+  object Customer_1_4 of Customer is
+    registered := enum yes(
+    );
+    browsing_currently := null;
+  end
+
+
+  omega := +0.0;
+  deadlines := {};
+end

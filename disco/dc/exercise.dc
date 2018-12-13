@@ -1,0 +1,111 @@
+layer exercise is
+  class System is
+     active_customer : reference Customer;
+     active_shopkeeper : reference Shopkeeper;
+     active_admin : reference Admin;
+  end System;
+  
+  class Bookstore is
+    owner: reference Shopkeeper;
+  end Bookstore;
+  
+  class Cart is
+	book_1 : reference Book;
+	book_2 : reference Book;
+	book_3 : reference Book;
+	next_empty : (first, second, third, full);
+  end Cart;
+  
+  class Book is
+	owned_bookstore : reference Bookstore;
+	owned_customer : reference Customer;
+	in_cart : reference Cart;
+	name : (OfficerWithAGoal, EnemyWithVigor, GirlsOfThePrison, GuardiansOfHell, AliensAndBandits, AchievementOfDespair, BorderWithHonor);
+  end Book;
+  
+  
+  -- User types
+  class Customer is
+    registered : (yes, no);
+	browsing_currently : reference Book;
+  end Customer;
+  
+  class Shopkeeper is
+	in_use : (no, yes);
+  end Shopkeeper;
+  
+  class Admin is
+	in_use : (no, yes);
+  end Admin;
+  
+  -- Actions for bying and selling the book
+  action insert_book_to_cart(book : Book; cart : Cart; customer : Customer; system: System) is
+    when book.in_cart = null and book.owned_customer = null and customer.registered'yes and system.active_customer = customer and customer.browsing_currently = book do
+	   if cart.next_empty'third then 
+	    cart.book_3:=book || cart.next_empty->full();
+	   end if
+	   ||if cart.next_empty'second then 
+	    cart.book_2:=book || cart.next_empty->third();
+	   end if
+	   ||if cart.next_empty'first then 
+	    cart.book_1:=book || cart.next_empty->second();
+	   end if
+	   ||book.in_cart := cart;
+  end;
+  action customer_sell_book(book : Book;customer : Customer;system: System; bookstore : Bookstore) is
+    when book.owned_customer = customer and customer.registered'yes and system.active_customer = customer do
+	   book.owned_customer := null
+	   ||book.owned_bookstore := bookstore;
+  end;
+  action browse_book(customer : Customer; book : Book; bookstore : Bookstore) is
+    when book.owned_bookstore = bookstore do
+       customer.browsing_currently := book;
+  end;
+  
+  -- Actions for adding and removing books from bookstore
+  action add_book_store(shopkeeper : Shopkeeper; book : Book; bookstore : Bookstore; system: System) is
+    when book.in_cart = null and book.owned_customer = null and book.owned_bookstore = null and system.active_shopkeeper = shopkeeper do
+	   book.owned_bookstore := bookstore;
+  end;
+  action remove_book_store(shopkeeper : Shopkeeper; book : Book; bookstore : Bookstore; system: System) is
+    when book.in_cart = null and book.owned_customer = null and book.owned_bookstore = bookstore and system.active_shopkeeper = shopkeeper do
+	   book.owned_bookstore := null;
+  end;
+  
+  
+   --** AUTHENTICATION actions
+   
+   action register_customer(c : Customer) is
+    when c.registered'no do
+	   c.registered->yes();
+   end;
+  
+  -- Login actions 
+  action login_customer(customer : Customer; system : System) is
+    when system.active_customer = null and system.active_shopkeeper = null and system.active_admin = null and customer.registered'yes do
+	   system.active_customer := customer;
+  end;
+  action login_shopkeeper(shopkeeper : Shopkeeper; system : System) is
+    when system.active_customer = null and system.active_shopkeeper = null and system.active_admin = null do
+	   system.active_shopkeeper := shopkeeper;
+  end;
+  action login_admin(admin : Admin; system : System) is
+    when system.active_customer = null and system.active_shopkeeper = null and system.active_admin = null do
+	   system.active_admin := admin;
+  end;
+  
+  -- logout actions
+  action logout_customer(customer : Customer; system : System) is
+    when system.active_customer = customer do
+	   system.active_customer := null;
+  end;
+  action logout_shopkeeper(shopkeeper : Shopkeeper; system : System) is
+    when system.active_shopkeeper = shopkeeper do
+	   system.active_shopkeeper := null;
+  end;
+  action logout_admin(admin : Admin; system : System) is
+    when  system.active_admin = admin do
+	   system.active_admin := null;
+  end;
+  
+end exercise;

@@ -27,16 +27,10 @@ BASKET[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
  |when(b1==0)book_1.disable -> BASKET[b1][b2][b3][info]
  |when(b2==0)book_2.disable -> BASKET[b1][b2][b3][info]
  |when(b3==0)book_3.disable -> BASKET[b1][b2][b3][info]
- //|overview[b1][b2][b3][info] -> BASKET[b1][b2][b3][info]
  |when((b1==1 || b2==1 || b3==1) && info==0) order -> GIVE_INFO[b1][b2][b3][info]
  |when((b1==1 || b2==1 || b3==1) && info==1) order -> PAYMENT[b1][b2][b3][info]
- |modify_info -> BASKET[b1][b2][b3][1]
+ |modify_delivery_info -> BASKET[b1][b2][b3][1]
  ),
-//ORDER[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
-//  cancel_ordering -> BASKET[b1][b2][b3][info]
-// |when(info==0)overview -> GIVE_INFO[b1][b2][b3][info]
-// |when(info==1)overview -> PAYMENT[b1][b2][b3][info]
-// ),
 GIVE_INFO[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
   cancel_ordering -> BASKET[b1][b2][b3][info]
  |give_delivery_info -> PAYMENT[b1][b2][b3][1]
@@ -49,7 +43,7 @@ GIVE_INFO[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
  ),
 PAYMENT[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
   cancel_ordering -> BASKET[b1][b2][b3][info]
- |payment_and_verify -> order_completed -> BASKET[0][0][0][info]
+ |payment_method_and_verify_order -> BASKET[0][0][0][info]
  |when(b1==1)book_1.disable -> NOTIFY[0][b2][b3][info]
  |when(b2==1)book_2.disable -> NOTIFY[b1][0][b3][info]
  |when(b3==1)book_3.disable -> NOTIFY[b1][b2][0][info]

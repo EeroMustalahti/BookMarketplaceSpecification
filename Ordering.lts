@@ -1,80 +1,119 @@
 /** Book Marketplace Specification
- *  The process of ordering books by the customers
+ *  The process of ordering books
  */
 
-range R = 0..5
-range Bool = 0..1
-set Baskets = {basket_1,basket_2}
-set Books = {book_1,book_2,book_3}
+range BookStates = 0..3  // 0 = Not reserved, 1 = Reserved, 2 = Not in bookstore, 3 = Bought
+range Bool = 0..1        // 0 = Basket does not contain the book, 1 = Book is in the basket
+set Baskets = {basket_x,basket_y}
 
-BOOK = (add_to_basket -> IN_BASKET
-       |disable -> DISABLED),
-IN_BASKET = (remove_from_basket -> BOOK
-            |disable ->DISABLED),
-DISABLED = (when(1==0)already_disabled -> DISABLED).
+BOOKS(A=0,B=0,C=0) = BOOKS[A][B][C],                 // Three books are modeled
+BOOKS[a:BookStates][b:BookStates][c:BookStates] = (
+  when(a==0) book_a.add     -> BOOKS[1][b][c]        // Add book to basket
+ |when(b==0) book_b.add     -> BOOKS[a][1][c]
+ |when(c==0) book_c.add     -> BOOKS[a][b][1]
+ |when(a==1) book_a.remove  -> BOOKS[0][b][c]        // Remove book from basket
+ |when(b==1) book_b.remove  -> BOOKS[a][0][c]
+ |when(c==1) book_c.remove  -> BOOKS[a][b][0]
+ |when(a<2)  book_a.disable -> BOOKS[2][b][c]        // Render book unsellable
+ |when(b<2)  book_b.disable -> BOOKS[a][2][c]
+ |when(c<2)  book_c.disable -> BOOKS[a][b][2]
+ |when(a==2) book_a.enable  -> BOOKS[0][b][c]        // Make book sellable
+ |when(b==2) book_b.enable  -> BOOKS[a][0][c]
+ |when(c==2) book_c.enable  -> BOOKS[a][b][0]
+ |when(a==1) book_a.buy     -> BOOKS[3][b][c]        // The book is bought
+ |when(b==1) book_b.buy     -> BOOKS[a][3][c]
+ |when(c==1) book_c.buy     -> BOOKS[a][b][3]
 
-BASKET(B1=0,B2=0,B3=0,I=0) = BASKET[0][0][0][0],
-BASKET[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
-  when(b1==0)book_1.add_to_basket -> BASKET[1][b2][b3][info]
- |when(b2==0)book_2.add_to_basket -> BASKET[b1][1][b3][info]
- |when(b3==0)book_3.add_to_basket -> BASKET[b1][b2][1][info]
- |when(b1==1)book_1.remove_from_basket -> BASKET[0][b2][b3][info]
- |when(b2==1)book_2.remove_from_basket -> BASKET[b1][0][b3][info]
- |when(b3==1)book_3.remove_from_basket -> BASKET[b1][b2][0][info]
- |when(b1==1)book_1.disable -> NOTIFY[0][b2][b3][info]
- |when(b2==1)book_2.disable -> NOTIFY[b1][0][b3][info]
- |when(b3==1)book_3.disable -> NOTIFY[b1][b2][0][info]
- |when(b1==0)book_1.disable -> BASKET[b1][b2][b3][info]
- |when(b2==0)book_2.disable -> BASKET[b1][b2][b3][info]
- |when(b3==0)book_3.disable -> BASKET[b1][b2][b3][info]
- |when((b1==1 || b2==1 || b3==1) && info==0) order -> GIVE_INFO[b1][b2][b3][info]
- |when((b1==1 || b2==1 || b3==1) && info==1) order -> PAYMENT[b1][b2][b3][info]
- |modify_delivery_info -> BASKET[b1][b2][b3][1]
- ),
-GIVE_INFO[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
-  cancel_ordering -> BASKET[b1][b2][b3][info]
- |give_delivery_info -> PAYMENT[b1][b2][b3][1]
- |when(b1==1)book_1.disable -> NOTIFY[0][b2][b3][info]
- |when(b2==1)book_2.disable -> NOTIFY[b1][0][b3][info]
- |when(b3==1)book_3.disable -> NOTIFY[b1][b2][0][info]
- |when(b1==0)book_1.disable -> GIVE_INFO[b1][b2][b3][info]
- |when(b2==0)book_2.disable -> GIVE_INFO[b1][b2][b3][info]
- |when(b3==0)book_3.disable -> GIVE_INFO[b1][b2][b3][info]
- ),
-PAYMENT[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
-  cancel_ordering -> BASKET[b1][b2][b3][info]
- |payment_method_and_verify_order -> BASKET[0][0][0][info]
- |when(b1==1)book_1.disable -> NOTIFY[0][b2][b3][info]
- |when(b2==1)book_2.disable -> NOTIFY[b1][0][b3][info]
- |when(b3==1)book_3.disable -> NOTIFY[b1][b2][0][info]
- |when(b1==0)book_1.disable -> PAYMENT[b1][b2][b3][info]
- |when(b2==0)book_2.disable -> PAYMENT[b1][b2][b3][info]
- |when(b3==0)book_3.disable -> PAYMENT[b1][b2][b3][info]
- ),
-NOTIFY[b1:Bool][b2:Bool][b3:Bool][info:Bool] = (
-  nofity_removed_book -> BASKET[b1][b2][b3][info]
- |when(b1==1)book_1.disable -> NOTIFY[0][b2][b3][info]
- |when(b2==1)book_2.disable -> NOTIFY[b1][0][b3][info]
- |when(b3==1)book_3.disable -> NOTIFY[b1][b2][0][info]
- |when(b1==0)book_1.disable -> NOTIFY[b1][b2][b3][info]
- |when(b2==0)book_2.disable -> NOTIFY[b1][b2][b3][info]
- |when(b3==0)book_3.disable -> NOTIFY[b1][b2][b3][info]
- ).
+ |when(a==3) book_a.new_book     -> BOOKS[0][b][c]        // The book is bought
+ |when(b==3) book_b.new_book     -> BOOKS[a][0][c]
+ |when(c==3) book_c.new_book     -> BOOKS[a][b][0]
+).
 
-||ORDERING =
-  (basket_1:BASKET(0,0,0,0)
-|| basket_2:BASKET(0,0,0,0)
-||{basket_1,basket_2}::book_1:BOOK
-||{basket_1,basket_2}::book_2:BOOK
-||{basket_1,basket_2}::book_3:BOOK
-  )
-/{
-book_1.disabled/{basket_1,basket_2}.book_1.disable,
-book_2.disabled/{basket_1,basket_2}.book_2.disable,
-book_3.disabled/{basket_1,basket_2}.book_3.disable
-}
-.
+BASKET(A=0,B=0,C=0,INFO=0) = BASKET[A][B][C][INFO],  // Basket can contain all the system's books
+BASKET[a:Bool][b:Bool][c:Bool][i:Bool] = (           // i = has the customer already provided the delivery information
+  when(a==0) book_a.add    -> BASKET[1][b][c][i]
+ |when(b==0) book_b.add    -> BASKET[a][1][c][i]
+ |when(c==0) book_c.add    -> BASKET[a][b][1][i]
+ |when(a==1) book_a.remove -> BASKET[0][b][c][i]
+ |when(b==1) book_b.remove -> BASKET[a][0][c][i]
+ |when(c==1) book_c.remove -> BASKET[a][b][0][i]
+ |when((a==1 || b==1 || c ==1) && i==0) order -> GIVE_INFO[a][b][c][i]  // If the delivery info is not given then it will be asked.
+ |when((a==1 || b==1 || c ==1) && i==1) order ->    VERIFY[a][b][c][i]  // If it is given then skip the step where it is asked.
+ |modify_delivery_info      -> BASKET[a][b][c][1]                       // Customer can update the delivery info if they have need to do it
+ |when(a==0) book_a.disable -> BASKET[0][b][c][i]
+ |when(b==0) book_b.disable -> BASKET[a][0][c][i]
+ |when(c==0) book_c.disable -> BASKET[a][b][0][i]
+ |when(a==1) book_a.disable -> NOTIFY[0][b][c][i]  // If a book is disabled while it is in basket the customer is
+ |when(b==1) book_b.disable -> NOTIFY[a][0][c][i]  // notified about changed basket contents.
+ |when(c==1) book_c.disable -> NOTIFY[a][b][0][i]
+),
+GIVE_INFO[a:Bool][b:Bool][c:Bool][i:Bool] = (
+  give_delivery_info       -> VERIFY[a][b][c][1]
+ |cancel_ordering -> BASKET[a][b][c][i]               // Customer can abort the ordering of books if they wish
+ |when(a==0) book_a.disable -> GIVE_INFO[0][b][c][i]
+ |when(b==0) book_b.disable -> GIVE_INFO[a][0][c][i]
+ |when(c==0) book_c.disable -> GIVE_INFO[a][b][0][i]
+ |when(a==1) book_a.disable ->    NOTIFY[0][b][c][i]
+ |when(b==1) book_b.disable ->    NOTIFY[a][0][c][i]
+ |when(c==1) book_c.disable ->    NOTIFY[a][b][0][i]
+),
+VERIFY[a:Bool][b:Bool][c:Bool][i:Bool] = (
+  payment_method_and_verify -> FULFILL_ORDER[a][b][c][i]  // Ask what is the order's payment method and verify the order
+ |cancel_ordering           ->        BASKET[a][b][c][i]
+ |when(a==0) book_a.disable -> VERIFY[0][b][c][i]
+ |when(b==0) book_b.disable -> VERIFY[a][0][c][i]
+ |when(c==0) book_c.disable -> VERIFY[a][b][0][i]
+ |when(a==1) book_a.disable -> NOTIFY[0][b][c][i]
+ |when(b==1) book_b.disable -> NOTIFY[a][0][c][i]
+ |when(c==1) book_c.disable -> NOTIFY[a][b][0][i]
+),
+FULFILL_ORDER[a:Bool][b:Bool][c:Bool][i:Bool] = (                   // The basket is emptied from ordered books
+  when(a==0 && b==0 && c==0) order_fulfilled -> BASKET[a][b][c][i]  // The order is filled after all basket's books have become bought
+ |when(a==1) book_a.buy     -> FULFILL_ORDER[0][b][c][i]
+ |when(b==1) book_b.buy     -> FULFILL_ORDER[a][0][c][i]
+ |when(c==1) book_c.buy     -> FULFILL_ORDER[a][b][0][i]
+ |when(a==0) book_a.disable -> FULFILL_ORDER[a][b][c][i]
+ |when(b==0) book_b.disable -> FULFILL_ORDER[a][b][c][i]
+ |when(c==0) book_c.disable -> FULFILL_ORDER[a][b][c][i]
+ // After verifying order the ordered books cannot be disabled and thus not made unsellable anymore
+),
+NOTIFY[a:Bool][b:Bool][c:Bool][i:Bool] = (
+  notify_disabled_book      -> BASKET[a][b][c][i]
+ |when(a==0) book_a.disable -> VERIFY[a][b][c][i]
+ |when(b==0) book_b.disable -> VERIFY[a][b][c][i]
+ |when(c==0) book_c.disable -> VERIFY[a][b][c][i]
+ |when(a==1) book_a.disable -> NOTIFY[0][b][c][i]
+ |when(b==1) book_b.disable -> NOTIFY[a][0][c][i]
+ |when(c==1) book_c.disable -> NOTIFY[a][b][0][i]
+).
 
-// SAFETY: INFO IS GIVEN BEFORE PURHCASE
-// SAFETY: IF BOOK DISAPPEARS WHILE ORDERING PURHCASE IS NOT POSSIBLE BEFORE NOTIFY AND RE-OVERVIEW STEPS
-// PROGRESS: ALL BOOKS WILL BECOME ORDERED
+// Two customer's shopping baskets handling same books
+||ORDERING = (basket_x:BASKET || basket_y:BASKET || {basket_x,basket_y}::BOOKS)/{
+  // Baskets do not disable/enable/add new books to the bookstore books.
+  // Relabel so that only one disable/enable/adding new book to the store action for each book.
+  book_a.disable /Baskets.book_a.disable,
+  book_b.disable /Baskets.book_b.disable,
+  book_c.disable /Baskets.book_c.disable,
+  book_a.enable  /Baskets.book_a.enable,
+  book_b.enable  /Baskets.book_b.enable,
+  book_c.enable  /Baskets.book_c.enable,
+  book_a.new_book/Baskets.book_a.new_book,
+  book_b.new_book/Baskets.book_b.new_book,
+  book_c.new_book/Baskets.book_c.new_book
+}.
+
+// Baskets must not go into a state where purchasing books is not possible
+progress BASKET_X_CAN_BUY = {basket_x.book_a.buy,basket_x.book_b.buy,basket_x.book_c.buy}
+progress BASKET_Y_CAN_BUY = {basket_y.book_a.buy,basket_y.book_b.buy,basket_y.book_c.buy}
+
+// After verifying the order it must become fulfilled
+property BASKET_X_COMPLETE_ORDER = (basket_x.payment_method_and_verify -> basket_x.order_fulfilled -> BASKET_X_COMPLETE_ORDER).
+property BASKET_Y_COMPLETE_ORDER = (basket_y.payment_method_and_verify -> basket_y.order_fulfilled -> BASKET_Y_COMPLETE_ORDER).
+
+// After rendering book unsellable it must be able to become sellable again
+property ENABLING_BOOK_A = (book_a.disable -> book_a.enable -> ENABLING_BOOK_A).
+property ENABLING_BOOK_B = (book_b.disable -> book_b.enable -> ENABLING_BOOK_B).
+property ENABLING_BOOK_C = (book_c.disable -> book_c.enable -> ENABLING_BOOK_C).
+
+||SAFE_ORDERING = (ORDERING ||BASKET_X_COMPLETE_ORDER || BASKET_Y_COMPLETE_ORDER
+                 ||ENABLING_BOOK_A || ENABLING_BOOK_B || ENABLING_BOOK_C).

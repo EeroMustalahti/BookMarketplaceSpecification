@@ -1,3 +1,6 @@
 Jali Juhola (421960)
 Eero Mustalahti (422261)
 Eero Lempiö (415524)
+
+If problems arise then here is the GitHub repository
+https://github.com/Musteero/BookMarketplaceSpecification

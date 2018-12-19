@@ -1,0 +1,66 @@
+range BOOL = 0..1
+set Users = {u1,u2,u3}
+
+UNSIGNEDUSER(N=0,O=0,P=0) = UNSIGNEDUSER[N][O][P],
+UNSIGNEDUSER[c:BOOL][s:BOOL][a:BOOL] = (
+browseUndSearch -> UNSIGNEDUSER[c][s][a]
+|login -> USER[c][s][a]),
+USER[c:BOOL][s:BOOL][a:BOOL] = (	
+	 when(c==1)selectCustomer -> deselectCust -> USER[c][s][a]
+	|when(c==0) registerAsCustomer -> USER[1][s][a]
+	|when(c==1) stopCustomer -> USER[0][s][a]
+
+	|when(s==1)selectShopkeeper -> deselectShopkeeper -> USER[c][s][a]
+	|when(s==0) becomeShopkeeper  -> USER[c][1][a]
+	|when(s==0) requestShopkeeper  -> USER[c][s][a]
+	|when(s==1) stopShopkeeper  -> USER[c][0][a]
+
+	|when(a==1) selectAdmin -> deselectAdmin -> USER[c][s][a]
+	|when(a==0) becomeAdmin -> USER[c][s][1]
+	|when(a==1) stopAdmin -> USER[c][s][0]
+
+	|logout -> UNSIGNEDUSER[c][s][a]).
+
+CUST = (
+	selectCustomer -> DO_CUST),
+DO_CUST = (
+	deselectCustomer -> CUST
+	|browseUndSearch -> DO_CUST
+	|order -> DO_CUST
+	|timeout -> deselectCustomer -> CUST).
+
+SHOP = (
+	selectShopkeeper  -> DO_SHOP),
+DO_SHOP = (
+	deselectShopkeeper  -> SHOP
+	|manage_bookstore -> DO_SHOP
+	|timeout -> deselectShopkeeper -> SHOP).
+
+ADMIN = (
+	selectAdmin -> DO_ADMIN),
+DO_ADMIN = (
+	 Users.makeCustomer -> DO_ADMIN
+	|Users.removeCustomer -> DO_ADMIN
+	|Users.makeShopkeeper -> DO_ADMIN
+	|Users.removeShopkeeper -> DO_ADMIN
+	|Users.makeAdmin -> DO_ADMIN
+	|Users.removeAdmin -> DO_ADMIN
+	|deselectAdmin -> ADMIN
+	|timeout -> deselectAdmin -> ADMIN).
+
+||SYSTEM = (
+u1:UNSIGNEDUSER(0,0,1) /
+	{Users.u1.makeAdmin / u1.becomeAdmin, Users.u1.removeAdmin / u1.stopAdmin,
+	 Users.u1.removeCustomer / u1.stopCustomer,
+	 Users.u1.makeShopkeeper / u1.becomeShopkeeper, Users.u1.removeShopkeeper / u1.stopShopkeeper}
+||u2:UNSIGNEDUSER(0,0,0) /
+	{Users.u2.makeAdmin / u2.becomeAdmin, Users.u2.removeAdmin / u2.stopAdmin,
+	 Users.u2.removeCustomer / u2.stopCustomer,
+	 Users.u2.makeShopkeeper / u2.becomeShopkeeper, Users.u2.removeShopkeeper / u2.stopShopkeeper}
+||u3:UNSIGNEDUSER(0,0,0) /
+	{Users.u3.makeAdmin / u3.becomeAdmin, Users.u3.removeAdmin / u3.stopAdmin,
+	 Users.u3.removeCustomer / u3.stopCustomer,
+	 Users.u3.makeShopkeeper / u3.becomeShopkeeper, Users.u3.removeShopkeeper / u3.stopShopkeeper}
+||u1::CUST || u1::ADMIN || u1::SHOP
+||u2::CUST || u2::ADMIN || u2::SHOP
+||u3::CUST || u3::ADMIN || u3::SHOP).

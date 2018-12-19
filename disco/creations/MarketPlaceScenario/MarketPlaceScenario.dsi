@@ -1,0 +1,86 @@
+instance MarketPlaceScenario of exercise is 
+
+  object System_1 of System is
+    active_customer := null;
+    active_shopkeeper := null;
+    active_admin := null;
+  end
+  object Bookstore_1 of Bookstore is
+    owner := reference Shopkeeper_2_2;
+    created := enum yes(
+    );
+  end
+  object Basket_1 of Basket is
+    book_1 := null;
+    book_2 := null;
+    book_3 := null;
+    next_empty := enum first(
+    );
+  end
+  object Book_1 of Book is
+    owned_bookstore := null;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Customer_1 of Customer is
+    browsing_currently := null;
+    owns_basket := reference Basket_1;
+  end
+  object Shopkeeper_1 of Shopkeeper is
+    registed := enum no(
+    );
+  end
+  object Admin_1 of Admin is
+  end
+  object Bookstore_2 of Bookstore is
+    owner := reference Shopkeeper_2_1;
+    created := enum yes(
+    );
+  end
+  object Basket_2 of Basket is
+    book_1 := null;
+    book_2 := null;
+    book_3 := null;
+    next_empty := enum first(
+    );
+  end
+  object Book_2_1 of Book is
+    owned_bookstore := reference Bookstore_1;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Book_2_2 of Book is
+    owned_bookstore := reference Bookstore_1;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Book_2_3 of Book is
+    owned_bookstore := reference Bookstore_2;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Customer_2 of Customer is
+    browsing_currently := null;
+    owns_basket := reference Basket_2;
+  end
+  object Shopkeeper_2_1 of Shopkeeper is
+    registed := enum yes(
+    );
+  end
+  object Shopkeeper_2_2 of Shopkeeper is
+    registed := enum yes(
+    );
+  end
+
+
+  omega := +0.0;
+  deadlines := {};
+end

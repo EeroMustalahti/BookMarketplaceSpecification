@@ -72,7 +72,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 393)
+        (ID exercise 401)
         (HistoryBases 
         )
       )
@@ -115,7 +115,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 394)
+            (ID exercise 402)
             (HistoryBases 
             )
           )
@@ -136,7 +136,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 395)
+            (ID exercise 403)
             (HistoryBases 
             )
           )
@@ -173,7 +173,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 396)
+        (ID exercise 404)
         (HistoryBases 
         )
       )
@@ -250,7 +250,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 397)
+            (ID exercise 405)
             (HistoryBases 
             )
           )
@@ -271,7 +271,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 398)
+            (ID exercise 406)
             (HistoryBases 
             )
           )
@@ -292,7 +292,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 399)
+            (ID exercise 407)
             (HistoryBases 
             )
           )
@@ -313,7 +313,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 400)
+            (ID exercise 408)
             (HistoryBases 
             )
           )
@@ -352,7 +352,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 401)
+        (ID exercise 409)
         (HistoryBases 
         )
       )
@@ -429,7 +429,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 402)
+            (ID exercise 410)
             (HistoryBases 
             )
           )
@@ -450,7 +450,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 403)
+            (ID exercise 411)
             (HistoryBases 
             )
           )
@@ -471,7 +471,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 404)
+            (ID exercise 412)
             (HistoryBases 
             )
           )
@@ -492,7 +492,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 405)
+            (ID exercise 413)
             (HistoryBases 
             )
           )
@@ -513,7 +513,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 406)
+            (ID exercise 414)
             (HistoryBases 
             )
           )
@@ -534,7 +534,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 407)
+            (ID exercise 415)
             (HistoryBases 
             )
           )
@@ -555,7 +555,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 408)
+            (ID exercise 416)
             (HistoryBases 
             )
           )
@@ -597,7 +597,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 409)
+        (ID exercise 417)
         (HistoryBases 
         )
       )
@@ -651,7 +651,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 410)
+        (ID exercise 418)
         (HistoryBases 
         )
       )
@@ -677,7 +677,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 411)
+            (ID exercise 419)
             (HistoryBases 
             )
           )
@@ -698,7 +698,7 @@
           )
           (Excluded false)
           (History 
-            (ID exercise 412)
+            (ID exercise 420)
             (HistoryBases 
             )
           )
@@ -735,7 +735,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 413)
+        (ID exercise 421)
         (HistoryBases 
         )
       )
@@ -755,7 +755,7 @@
       )
       (Excluded false)
       (History 
-        (ID exercise 414)
+        (ID exercise 422)
         (HistoryBases 
         )
       )
@@ -764,7 +764,7 @@
   )
   (FunctionalityList
     (Action insert_book_to_basket
-      (ID exercise 173)
+      (ID exercise 174)
       (Location "exercise.dc" 53)
       (SIGNATURE insert_book_to_basket(Book, Basket, Customer, System))
       (EXCLUDED false)
@@ -815,7 +815,7 @@
         )
       )
       (History 
-        (ID exercise 173)
+        (ID exercise 174)
       )
         (Guard
         (CONJUNCTS
@@ -907,11 +907,38 @@
               )
             )
           )
+          (GuardConjunct (ID exercise 163)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 156)
+                  (ID exercise 146)
+                )
+                (TYPE _exercise_reference_to_Basket__GenName14 (ID exercise 145))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Basket__GenName14 (ID exercise 145))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 155)
+                )
+                (TYPE _exercise_reference_to_Basket__GenName14 (ID exercise 145))
+                (ORIGINAL_TYPE
+                  (TYPE Basket (ID exercise 126))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Basket__GenName14 (ID exercise 145))
+              )
+            )
+          )
       )
       )
       (BODY
         (CONDITIONAL_STATEMENT
-          (ID exercise 165)
+          (ID exercise 166)
           (CONDITION
             (VariableReference
               (REFERENCES
@@ -927,7 +954,7 @@
           )
           (BODY
             (Assignment
-              (ID exercise 163)
+              (ID exercise 164)
               (NameReferenceLValue
                 (REFERENCES
                   (ID exercise 155)
@@ -948,7 +975,7 @@
               )
             )
             (Assignment
-              (ID exercise 164)
+              (ID exercise 165)
               (NameReferenceLValue
                 (REFERENCES
                   (ID exercise 155)
@@ -965,7 +992,7 @@
           )
         )
         (CONDITIONAL_STATEMENT
-          (ID exercise 168)
+          (ID exercise 169)
           (CONDITION
             (VariableReference
               (REFERENCES
@@ -981,7 +1008,7 @@
           )
           (BODY
             (Assignment
-              (ID exercise 166)
+              (ID exercise 167)
               (NameReferenceLValue
                 (REFERENCES
                   (ID exercise 155)
@@ -1002,7 +1029,7 @@
               )
             )
             (Assignment
-              (ID exercise 167)
+              (ID exercise 168)
               (NameReferenceLValue
                 (REFERENCES
                   (ID exercise 155)
@@ -1019,7 +1046,7 @@
           )
         )
         (CONDITIONAL_STATEMENT
-          (ID exercise 171)
+          (ID exercise 172)
           (CONDITION
             (VariableReference
               (REFERENCES
@@ -1035,7 +1062,7 @@
           )
           (BODY
             (Assignment
-              (ID exercise 169)
+              (ID exercise 170)
               (NameReferenceLValue
                 (REFERENCES
                   (ID exercise 155)
@@ -1056,7 +1083,7 @@
               )
             )
             (Assignment
-              (ID exercise 170)
+              (ID exercise 171)
               (NameReferenceLValue
                 (REFERENCES
                   (ID exercise 155)
@@ -1073,7 +1100,7 @@
           )
         )
         (Assignment
-          (ID exercise 172)
+          (ID exercise 173)
           (NameReferenceLValue
             (REFERENCES
               (ID exercise 154)
@@ -1097,26 +1124,15 @@
       (SOURCE "")
     )
     (Action customer_remove_book_from_basket
-      (ID exercise 186)
-      (Location "exercise.dc" 66)
+      (ID exercise 188)
+      (Location "exercise.dc" 67)
       (SIGNATURE customer_remove_book_from_basket(Book, Basket, Bookstore, Customer))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT book
-          (ID exercise 174)
-          (Location "exercise.dc" 55)
-          (TYPE Book (ID exercise 142))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 174)
-          )
-        )
-        (PARTICIPANT basket
           (ID exercise 175)
           (Location "exercise.dc" 55)
-          (TYPE Basket (ID exercise 126))
+          (TYPE Book (ID exercise 142))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
@@ -1124,10 +1140,10 @@
             (ID exercise 175)
           )
         )
-        (PARTICIPANT bookstore
+        (PARTICIPANT basket
           (ID exercise 176)
           (Location "exercise.dc" 55)
-          (TYPE Bookstore (ID exercise 113))
+          (TYPE Basket (ID exercise 126))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
@@ -1135,10 +1151,10 @@
             (ID exercise 176)
           )
         )
-        (PARTICIPANT customer
+        (PARTICIPANT bookstore
           (ID exercise 177)
           (Location "exercise.dc" 55)
-          (TYPE Customer (ID exercise 147))
+          (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
@@ -1146,13 +1162,24 @@
             (ID exercise 177)
           )
         )
+        (PARTICIPANT customer
+          (ID exercise 178)
+          (Location "exercise.dc" 55)
+          (TYPE Customer (ID exercise 147))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 178)
+          )
+        )
       )
       (History 
-        (ID exercise 186)
+        (ID exercise 188)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 179)
+          (GuardConjunct (ID exercise 180)
             (LogicalBinaryOperation or
               (TYPE boolean (ID _emptyLayer 3))
               (LogicalBinaryOperation or
@@ -1163,7 +1190,7 @@
                     (TYPE boolean (ID _emptyLayer 3))
                     (VariableReference
                       (REFERENCES
-                        (ID exercise 174)
+                        (ID exercise 175)
                         (ID exercise 128)
                       )
                       (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
@@ -1173,7 +1200,7 @@
                     )
                     (ObjectReference
                       (REFERENCES
-                        (ID exercise 176)
+                        (ID exercise 177)
                       )
                       (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
                       (ORIGINAL_TYPE
@@ -1188,7 +1215,7 @@
                     (TYPE boolean (ID _emptyLayer 3))
                     (VariableReference
                       (REFERENCES
-                        (ID exercise 175)
+                        (ID exercise 176)
                         (ID exercise 115)
                       )
                       (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
@@ -1198,7 +1225,7 @@
                     )
                     (ObjectReference
                       (REFERENCES
-                        (ID exercise 174)
+                        (ID exercise 175)
                       )
                       (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
                       (ORIGINAL_TYPE
@@ -1214,7 +1241,7 @@
                   (TYPE boolean (ID _emptyLayer 3))
                   (VariableReference
                     (REFERENCES
-                      (ID exercise 175)
+                      (ID exercise 176)
                       (ID exercise 117)
                     )
                     (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
@@ -1224,7 +1251,7 @@
                   )
                   (ObjectReference
                     (REFERENCES
-                      (ID exercise 174)
+                      (ID exercise 175)
                     )
                     (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
                     (ORIGINAL_TYPE
@@ -1240,7 +1267,7 @@
                 (TYPE boolean (ID _emptyLayer 3))
                 (VariableReference
                   (REFERENCES
-                    (ID exercise 175)
+                    (ID exercise 176)
                     (ID exercise 119)
                   )
                   (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
@@ -1250,7 +1277,7 @@
                 )
                 (ObjectReference
                   (REFERENCES
-                    (ID exercise 174)
+                    (ID exercise 175)
                   )
                   (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
                   (ORIGINAL_TYPE
@@ -1267,13 +1294,13 @@
       )
       (BODY
         (CONDITIONAL_STATEMENT
-          (ID exercise 181)
+          (ID exercise 182)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 175)
+                  (ID exercise 176)
                   (ID exercise 115)
                 )
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
@@ -1283,7 +1310,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 174)
+                  (ID exercise 175)
                 )
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
                 (ORIGINAL_TYPE
@@ -1297,10 +1324,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 180)
+              (ID exercise 181)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 175)
+                  (ID exercise 176)
                   (ID exercise 115)
                 )
               )
@@ -1310,13 +1337,13 @@
           )
         )
         (CONDITIONAL_STATEMENT
-          (ID exercise 183)
+          (ID exercise 184)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 175)
+                  (ID exercise 176)
                   (ID exercise 117)
                 )
                 (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
@@ -1326,7 +1353,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 174)
+                  (ID exercise 175)
                 )
                 (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
                 (ORIGINAL_TYPE
@@ -1340,10 +1367,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 182)
+              (ID exercise 183)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 175)
+                  (ID exercise 176)
                   (ID exercise 117)
                 )
               )
@@ -1353,13 +1380,13 @@
           )
         )
         (CONDITIONAL_STATEMENT
-          (ID exercise 185)
+          (ID exercise 186)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 175)
+                  (ID exercise 176)
                   (ID exercise 119)
                 )
                 (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
@@ -1369,7 +1396,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 174)
+                  (ID exercise 175)
                 )
                 (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
                 (ORIGINAL_TYPE
@@ -1383,10 +1410,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 184)
+              (ID exercise 185)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 175)
+                  (ID exercise 176)
                   (ID exercise 119)
                 )
               )
@@ -1395,41 +1422,30 @@
               )            )
           )
         )
+        (Assignment
+          (ID exercise 187)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 175)
+              (ID exercise 132)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Basket__GenName11 (ID exercise 131))
+          )        )
       )
       (SOURCE "")
     )
     (Action automatic_remove_book_from_basket
-      (ID exercise 198)
-      (Location "exercise.dc" 79)
+      (ID exercise 201)
+      (Location "exercise.dc" 81)
       (SIGNATURE automatic_remove_book_from_basket(Book, Basket, Bookstore))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT book
-          (ID exercise 187)
-          (Location "exercise.dc" 68)
-          (TYPE Book (ID exercise 142))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 187)
-          )
-        )
-        (PARTICIPANT basket
-          (ID exercise 188)
-          (Location "exercise.dc" 68)
-          (TYPE Basket (ID exercise 126))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 188)
-          )
-        )
-        (PARTICIPANT bookstore
           (ID exercise 189)
-          (Location "exercise.dc" 68)
-          (TYPE Bookstore (ID exercise 113))
+          (Location "exercise.dc" 69)
+          (TYPE Book (ID exercise 142))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
@@ -1437,13 +1453,35 @@
             (ID exercise 189)
           )
         )
+        (PARTICIPANT basket
+          (ID exercise 190)
+          (Location "exercise.dc" 69)
+          (TYPE Basket (ID exercise 126))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 190)
+          )
+        )
+        (PARTICIPANT bookstore
+          (ID exercise 191)
+          (Location "exercise.dc" 69)
+          (TYPE Bookstore (ID exercise 113))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 191)
+          )
+        )
       )
       (History 
-        (ID exercise 198)
+        (ID exercise 201)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 191)
+          (GuardConjunct (ID exercise 193)
             (LogicalBinaryOperation or
               (TYPE boolean (ID _emptyLayer 3))
               (LogicalBinaryOperation or
@@ -1454,7 +1492,7 @@
                     (TYPE boolean (ID _emptyLayer 3))
                     (VariableReference
                       (REFERENCES
-                        (ID exercise 187)
+                        (ID exercise 189)
                         (ID exercise 128)
                       )
                       (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
@@ -1464,7 +1502,7 @@
                     )
                     (ObjectReference
                       (REFERENCES
-                        (ID exercise 189)
+                        (ID exercise 191)
                       )
                       (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
                       (ORIGINAL_TYPE
@@ -1479,7 +1517,7 @@
                     (TYPE boolean (ID _emptyLayer 3))
                     (VariableReference
                       (REFERENCES
-                        (ID exercise 188)
+                        (ID exercise 190)
                         (ID exercise 115)
                       )
                       (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
@@ -1489,7 +1527,7 @@
                     )
                     (ObjectReference
                       (REFERENCES
-                        (ID exercise 187)
+                        (ID exercise 189)
                       )
                       (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
                       (ORIGINAL_TYPE
@@ -1505,7 +1543,7 @@
                   (TYPE boolean (ID _emptyLayer 3))
                   (VariableReference
                     (REFERENCES
-                      (ID exercise 188)
+                      (ID exercise 190)
                       (ID exercise 117)
                     )
                     (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
@@ -1515,7 +1553,7 @@
                   )
                   (ObjectReference
                     (REFERENCES
-                      (ID exercise 187)
+                      (ID exercise 189)
                     )
                     (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
                     (ORIGINAL_TYPE
@@ -1531,7 +1569,7 @@
                 (TYPE boolean (ID _emptyLayer 3))
                 (VariableReference
                   (REFERENCES
-                    (ID exercise 188)
+                    (ID exercise 190)
                     (ID exercise 119)
                   )
                   (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
@@ -1541,7 +1579,7 @@
                 )
                 (ObjectReference
                   (REFERENCES
-                    (ID exercise 187)
+                    (ID exercise 189)
                   )
                   (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
                   (ORIGINAL_TYPE
@@ -1558,13 +1596,13 @@
       )
       (BODY
         (CONDITIONAL_STATEMENT
-          (ID exercise 193)
+          (ID exercise 195)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 188)
+                  (ID exercise 190)
                   (ID exercise 115)
                 )
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
@@ -1574,7 +1612,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 187)
+                  (ID exercise 189)
                 )
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
                 (ORIGINAL_TYPE
@@ -1583,49 +1621,6 @@
               )
               (TYPECONVERSION CONVERT_TO
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
-              )
-            )
-          )
-          (BODY
-            (Assignment
-              (ID exercise 192)
-              (NameReferenceLValue
-                (REFERENCES
-                  (ID exercise 188)
-                  (ID exercise 115)
-                )
-              )
-              (ReferenceLiteral null
-                (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
-              )            )
-          )
-        )
-        (CONDITIONAL_STATEMENT
-          (ID exercise 195)
-          (CONDITION
-            (RelationalOperation =
-              (TYPE boolean (ID _emptyLayer 3))
-              (VariableReference
-                (REFERENCES
-                  (ID exercise 188)
-                  (ID exercise 117)
-                )
-                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
-                (ORIGINAL_TYPE
-                  (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
-                )
-              )
-              (ObjectReference
-                (REFERENCES
-                  (ID exercise 187)
-                )
-                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
-                (ORIGINAL_TYPE
-                  (TYPE Book (ID exercise 142))
-                )
-              )
-              (TYPECONVERSION CONVERT_TO
-                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
               )
             )
           )
@@ -1634,12 +1629,12 @@
               (ID exercise 194)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 188)
-                  (ID exercise 117)
+                  (ID exercise 190)
+                  (ID exercise 115)
                 )
               )
               (ReferenceLiteral null
-                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
+                (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
               )            )
           )
         )
@@ -1650,7 +1645,50 @@
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 188)
+                  (ID exercise 190)
+                  (ID exercise 117)
+                )
+                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 189)
+                )
+                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
+                (ORIGINAL_TYPE
+                  (TYPE Book (ID exercise 142))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
+              )
+            )
+          )
+          (BODY
+            (Assignment
+              (ID exercise 196)
+              (NameReferenceLValue
+                (REFERENCES
+                  (ID exercise 190)
+                  (ID exercise 117)
+                )
+              )
+              (ReferenceLiteral null
+                (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
+              )            )
+          )
+        )
+        (CONDITIONAL_STATEMENT
+          (ID exercise 199)
+          (CONDITION
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 190)
                   (ID exercise 119)
                 )
                 (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
@@ -1660,7 +1698,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 187)
+                  (ID exercise 189)
                 )
                 (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
                 (ORIGINAL_TYPE
@@ -1674,10 +1712,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 196)
+              (ID exercise 198)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 188)
+                  (ID exercise 190)
                   (ID exercise 119)
                 )
               )
@@ -1686,55 +1724,66 @@
               )            )
           )
         )
+        (Assignment
+          (ID exercise 200)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 189)
+              (ID exercise 132)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Basket__GenName11 (ID exercise 131))
+          )        )
       )
       (SOURCE "")
     )
     (Action buy_book_from_basket
-      (ID exercise 220)
-      (Location "exercise.dc" 103)
+      (ID exercise 223)
+      (Location "exercise.dc" 105)
       (SIGNATURE buy_book_from_basket(Book, Customer, Basket))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT book
-          (ID exercise 199)
-          (Location "exercise.dc" 81)
+          (ID exercise 202)
+          (Location "exercise.dc" 83)
           (TYPE Book (ID exercise 142))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 199)
+            (ID exercise 202)
           )
         )
         (PARTICIPANT customer
-          (ID exercise 200)
-          (Location "exercise.dc" 81)
+          (ID exercise 203)
+          (Location "exercise.dc" 83)
           (TYPE Customer (ID exercise 147))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 200)
+            (ID exercise 203)
           )
         )
         (PARTICIPANT basket
-          (ID exercise 201)
-          (Location "exercise.dc" 81)
+          (ID exercise 204)
+          (Location "exercise.dc" 83)
           (TYPE Basket (ID exercise 126))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 201)
+            (ID exercise 204)
           )
         )
       )
       (History 
-        (ID exercise 220)
+        (ID exercise 223)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 203)
+          (GuardConjunct (ID exercise 206)
             (LogicalBinaryOperation or
               (TYPE boolean (ID _emptyLayer 3))
               (LogicalBinaryOperation or
@@ -1743,7 +1792,7 @@
                   (TYPE boolean (ID _emptyLayer 3))
                   (VariableReference
                     (REFERENCES
-                      (ID exercise 201)
+                      (ID exercise 204)
                       (ID exercise 115)
                     )
                     (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
@@ -1753,7 +1802,7 @@
                   )
                   (ObjectReference
                     (REFERENCES
-                      (ID exercise 199)
+                      (ID exercise 202)
                     )
                     (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
                     (ORIGINAL_TYPE
@@ -1768,7 +1817,7 @@
                   (TYPE boolean (ID _emptyLayer 3))
                   (VariableReference
                     (REFERENCES
-                      (ID exercise 201)
+                      (ID exercise 204)
                       (ID exercise 117)
                     )
                     (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
@@ -1778,7 +1827,7 @@
                   )
                   (ObjectReference
                     (REFERENCES
-                      (ID exercise 199)
+                      (ID exercise 202)
                     )
                     (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
                     (ORIGINAL_TYPE
@@ -1794,7 +1843,7 @@
                 (TYPE boolean (ID _emptyLayer 3))
                 (VariableReference
                   (REFERENCES
-                    (ID exercise 201)
+                    (ID exercise 204)
                     (ID exercise 119)
                   )
                   (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
@@ -1804,7 +1853,7 @@
                 )
                 (ObjectReference
                   (REFERENCES
-                    (ID exercise 199)
+                    (ID exercise 202)
                   )
                   (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
                   (ORIGINAL_TYPE
@@ -1821,13 +1870,13 @@
       )
       (BODY
         (CONDITIONAL_STATEMENT
-          (ID exercise 208)
+          (ID exercise 211)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 201)
+                  (ID exercise 204)
                   (ID exercise 115)
                 )
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
@@ -1837,7 +1886,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                 )
                 (TYPE _exercise_reference_to_Book__GenName5 (ID exercise 114))
                 (ORIGINAL_TYPE
@@ -1851,10 +1900,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 204)
+              (ID exercise 207)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 128)
                 )
               )
@@ -1862,10 +1911,10 @@
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
               )            )
             (Assignment
-              (ID exercise 205)
+              (ID exercise 208)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 132)
                 )
               )
@@ -1873,16 +1922,16 @@
                 (TYPE _exercise_reference_to_Basket__GenName11 (ID exercise 131))
               )            )
             (Assignment
-              (ID exercise 206)
+              (ID exercise 209)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 130)
                 )
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 200)
+                  (ID exercise 203)
                 )
                 (TYPE _exercise_reference_to_Customer__GenName10 (ID exercise 129))
                 (ORIGINAL_TYPE
@@ -1894,10 +1943,10 @@
               )
             )
             (Assignment
-              (ID exercise 207)
+              (ID exercise 210)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 201)
+                  (ID exercise 204)
                   (ID exercise 115)
                 )
               )
@@ -1907,13 +1956,13 @@
           )
         )
         (CONDITIONAL_STATEMENT
-          (ID exercise 213)
+          (ID exercise 216)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 201)
+                  (ID exercise 204)
                   (ID exercise 117)
                 )
                 (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
@@ -1923,7 +1972,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                 )
                 (TYPE _exercise_reference_to_Book__GenName6 (ID exercise 116))
                 (ORIGINAL_TYPE
@@ -1937,10 +1986,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 209)
+              (ID exercise 212)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 128)
                 )
               )
@@ -1948,10 +1997,10 @@
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
               )            )
             (Assignment
-              (ID exercise 210)
+              (ID exercise 213)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 132)
                 )
               )
@@ -1959,16 +2008,16 @@
                 (TYPE _exercise_reference_to_Basket__GenName11 (ID exercise 131))
               )            )
             (Assignment
-              (ID exercise 211)
+              (ID exercise 214)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 130)
                 )
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 200)
+                  (ID exercise 203)
                 )
                 (TYPE _exercise_reference_to_Customer__GenName10 (ID exercise 129))
                 (ORIGINAL_TYPE
@@ -1980,10 +2029,10 @@
               )
             )
             (Assignment
-              (ID exercise 212)
+              (ID exercise 215)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 201)
+                  (ID exercise 204)
                   (ID exercise 117)
                 )
               )
@@ -1993,13 +2042,13 @@
           )
         )
         (CONDITIONAL_STATEMENT
-          (ID exercise 218)
+          (ID exercise 221)
           (CONDITION
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 201)
+                  (ID exercise 204)
                   (ID exercise 119)
                 )
                 (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
@@ -2009,7 +2058,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                 )
                 (TYPE _exercise_reference_to_Book__GenName7 (ID exercise 118))
                 (ORIGINAL_TYPE
@@ -2023,10 +2072,10 @@
           )
           (BODY
             (Assignment
-              (ID exercise 214)
+              (ID exercise 217)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 128)
                 )
               )
@@ -2034,10 +2083,10 @@
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
               )            )
             (Assignment
-              (ID exercise 215)
+              (ID exercise 218)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 132)
                 )
               )
@@ -2045,16 +2094,16 @@
                 (TYPE _exercise_reference_to_Basket__GenName11 (ID exercise 131))
               )            )
             (Assignment
-              (ID exercise 216)
+              (ID exercise 219)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 199)
+                  (ID exercise 202)
                   (ID exercise 130)
                 )
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 200)
+                  (ID exercise 203)
                 )
                 (TYPE _exercise_reference_to_Customer__GenName10 (ID exercise 129))
                 (ORIGINAL_TYPE
@@ -2066,10 +2115,10 @@
               )
             )
             (Assignment
-              (ID exercise 217)
+              (ID exercise 220)
               (NameReferenceLValue
                 (REFERENCES
-                  (ID exercise 201)
+                  (ID exercise 204)
                   (ID exercise 117)
                 )
               )
@@ -2079,15 +2128,15 @@
           )
         )
         (Assignment
-          (ID exercise 219)
+          (ID exercise 222)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 201)
+              (ID exercise 204)
               (ID exercise 125)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 102)
+            (Location "exercise.dc" 104)
             (TYPE first (ID exercise 121))
             (ACTUALS
             )
@@ -2097,56 +2146,56 @@
       (SOURCE "")
     )
     (Action browse_book
-      (ID exercise 228)
-      (Location "exercise.dc" 108)
+      (ID exercise 231)
+      (Location "exercise.dc" 110)
       (SIGNATURE browse_book(Customer, Book, Bookstore))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT customer
-          (ID exercise 221)
-          (Location "exercise.dc" 105)
+          (ID exercise 224)
+          (Location "exercise.dc" 107)
           (TYPE Customer (ID exercise 147))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 221)
+            (ID exercise 224)
           )
         )
         (PARTICIPANT book
-          (ID exercise 222)
-          (Location "exercise.dc" 105)
+          (ID exercise 225)
+          (Location "exercise.dc" 107)
           (TYPE Book (ID exercise 142))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 222)
+            (ID exercise 225)
           )
         )
         (PARTICIPANT bookstore
-          (ID exercise 223)
-          (Location "exercise.dc" 105)
+          (ID exercise 226)
+          (Location "exercise.dc" 107)
           (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 223)
+            (ID exercise 226)
           )
         )
       )
       (History 
-        (ID exercise 228)
+        (ID exercise 231)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 225)
+          (GuardConjunct (ID exercise 228)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 222)
+                  (ID exercise 225)
                   (ID exercise 128)
                 )
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
@@ -2156,7 +2205,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 223)
+                  (ID exercise 226)
                 )
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
                 (ORIGINAL_TYPE
@@ -2168,12 +2217,12 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 226)
+          (GuardConjunct (ID exercise 229)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 222)
+                  (ID exercise 225)
                   (ID exercise 132)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2189,16 +2238,16 @@
       )
       (BODY
         (Assignment
-          (ID exercise 227)
+          (ID exercise 230)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 221)
+              (ID exercise 224)
               (ID exercise 144)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 222)
+              (ID exercise 225)
             )
             (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
             (ORIGINAL_TYPE
@@ -2213,48 +2262,15 @@
       (SOURCE "")
     )
     (Action add_book_to_store
-      (ID exercise 239)
-      (Location "exercise.dc" 114)
+      (ID exercise 244)
+      (Location "exercise.dc" 116)
       (SIGNATURE add_book_to_store(Shopkeeper, Book, Bookstore, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT shopkeeper
-          (ID exercise 229)
-          (Location "exercise.dc" 111)
-          (TYPE Shopkeeper (ID exercise 152))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 229)
-          )
-        )
-        (PARTICIPANT book
-          (ID exercise 230)
-          (Location "exercise.dc" 111)
-          (TYPE Book (ID exercise 142))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 230)
-          )
-        )
-        (PARTICIPANT bookstore
-          (ID exercise 231)
-          (Location "exercise.dc" 111)
-          (TYPE Bookstore (ID exercise 113))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 231)
-          )
-        )
-        (PARTICIPANT system
           (ID exercise 232)
-          (Location "exercise.dc" 111)
-          (TYPE System (ID exercise 106))
+          (Location "exercise.dc" 113)
+          (TYPE Shopkeeper (ID exercise 152))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
@@ -2262,18 +2278,91 @@
             (ID exercise 232)
           )
         )
+        (PARTICIPANT book
+          (ID exercise 233)
+          (Location "exercise.dc" 113)
+          (TYPE Book (ID exercise 142))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 233)
+          )
+        )
+        (PARTICIPANT bookstore
+          (ID exercise 234)
+          (Location "exercise.dc" 113)
+          (TYPE Bookstore (ID exercise 113))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 234)
+          )
+        )
+        (PARTICIPANT system
+          (ID exercise 235)
+          (Location "exercise.dc" 113)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 235)
+          )
+        )
       )
       (History 
-        (ID exercise 239)
+        (ID exercise 244)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 234)
+          (GuardConjunct (ID exercise 237)
+            (VariableReference
+              (REFERENCES
+                (ID exercise 234)
+                (ID exercise 112)
+                (ID exercise 110)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 238)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 230)
+                  (ID exercise 234)
+                  (ID exercise 108)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 232)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+                (ORIGINAL_TYPE
+                  (TYPE Shopkeeper (ID exercise 152))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 239)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 233)
                   (ID exercise 132)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2285,12 +2374,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 235)
+          (GuardConjunct (ID exercise 240)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 230)
+                  (ID exercise 233)
                   (ID exercise 130)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2302,12 +2391,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 236)
+          (GuardConjunct (ID exercise 241)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 230)
+                  (ID exercise 233)
                   (ID exercise 128)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2319,12 +2408,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 237)
+          (GuardConjunct (ID exercise 242)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 232)
+                  (ID exercise 235)
                   (ID exercise 103)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
@@ -2334,7 +2423,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 229)
+                  (ID exercise 232)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
                 (ORIGINAL_TYPE
@@ -2350,16 +2439,16 @@
       )
       (BODY
         (Assignment
-          (ID exercise 238)
+          (ID exercise 243)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 230)
+              (ID exercise 233)
               (ID exercise 128)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 231)
+              (ID exercise 234)
             )
             (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
             (ORIGINAL_TYPE
@@ -2373,85 +2462,81 @@
       )
       (SOURCE "")
     )
-    (Action remove_book_to_store
-      (ID exercise 250)
-      (Location "exercise.dc" 118)
-      (SIGNATURE remove_book_to_store(Shopkeeper, Book, Bookstore, System))
+    (Action remove_book_from_store
+      (ID exercise 256)
+      (Location "exercise.dc" 120)
+      (SIGNATURE remove_book_from_store(Shopkeeper, Book, Bookstore, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT shopkeeper
-          (ID exercise 240)
-          (Location "exercise.dc" 115)
+          (ID exercise 245)
+          (Location "exercise.dc" 117)
           (TYPE Shopkeeper (ID exercise 152))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 240)
+            (ID exercise 245)
           )
         )
         (PARTICIPANT book
-          (ID exercise 241)
-          (Location "exercise.dc" 115)
+          (ID exercise 246)
+          (Location "exercise.dc" 117)
           (TYPE Book (ID exercise 142))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 241)
+            (ID exercise 246)
           )
         )
         (PARTICIPANT bookstore
-          (ID exercise 242)
-          (Location "exercise.dc" 115)
+          (ID exercise 247)
+          (Location "exercise.dc" 117)
           (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 242)
+            (ID exercise 247)
           )
         )
         (PARTICIPANT system
-          (ID exercise 243)
-          (Location "exercise.dc" 115)
+          (ID exercise 248)
+          (Location "exercise.dc" 117)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 243)
+            (ID exercise 248)
           )
         )
       )
       (History 
-        (ID exercise 250)
+        (ID exercise 256)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 245)
-            (RelationalOperation =
-              (TYPE boolean (ID _emptyLayer 3))
-              (VariableReference
-                (REFERENCES
-                  (ID exercise 241)
-                  (ID exercise 132)
-                )
-                (TYPE RefToAnyType (ID _emptyLayer 6))
-                (ORIGINAL_TYPE
-                  (TYPE _exercise_reference_to_Basket__GenName11 (ID exercise 131))
-                )
+          (GuardConjunct (ID exercise 250)
+            (VariableReference
+              (REFERENCES
+                (ID exercise 247)
+                (ID exercise 112)
+                (ID exercise 110)
               )
-              (ReferenceLiteral null
-                (TYPE RefToAnyType (ID _emptyLayer 6))
-              )            )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
           )
-          (GuardConjunct (ID exercise 246)
+          (GuardConjunct (ID exercise 251)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 241)
+                  (ID exercise 246)
                   (ID exercise 130)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2463,12 +2548,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 247)
+          (GuardConjunct (ID exercise 252)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 241)
+                  (ID exercise 246)
                   (ID exercise 128)
                 )
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
@@ -2478,7 +2563,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 242)
+                  (ID exercise 247)
                 )
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
                 (ORIGINAL_TYPE
@@ -2490,12 +2575,39 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 248)
+          (GuardConjunct (ID exercise 253)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 243)
+                  (ID exercise 247)
+                  (ID exercise 108)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 245)
+                )
+                (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+                (ORIGINAL_TYPE
+                  (TYPE Shopkeeper (ID exercise 152))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 254)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 248)
                   (ID exercise 103)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
@@ -2505,7 +2617,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 240)
+                  (ID exercise 245)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
                 (ORIGINAL_TYPE
@@ -2521,10 +2633,10 @@
       )
       (BODY
         (Assignment
-          (ID exercise 249)
+          (ID exercise 255)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 241)
+              (ID exercise 246)
               (ID exercise 128)
             )
           )
@@ -2535,45 +2647,45 @@
       (SOURCE "")
     )
     (Action login_customer
-      (ID exercise 258)
-      (Location "exercise.dc" 128)
+      (ID exercise 264)
+      (Location "exercise.dc" 130)
       (SIGNATURE login_customer(Customer, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT customer
-          (ID exercise 251)
-          (Location "exercise.dc" 125)
+          (ID exercise 257)
+          (Location "exercise.dc" 127)
           (TYPE Customer (ID exercise 147))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 251)
+            (ID exercise 257)
           )
         )
         (PARTICIPANT system
-          (ID exercise 252)
-          (Location "exercise.dc" 125)
+          (ID exercise 258)
+          (Location "exercise.dc" 127)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 252)
+            (ID exercise 258)
           )
         )
       )
       (History 
-        (ID exercise 258)
+        (ID exercise 264)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 254)
+          (GuardConjunct (ID exercise 260)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 252)
+                  (ID exercise 258)
                   (ID exercise 101)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2585,12 +2697,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 255)
+          (GuardConjunct (ID exercise 261)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 252)
+                  (ID exercise 258)
                   (ID exercise 103)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2602,12 +2714,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 256)
+          (GuardConjunct (ID exercise 262)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 252)
+                  (ID exercise 258)
                   (ID exercise 105)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2623,16 +2735,16 @@
       )
       (BODY
         (Assignment
-          (ID exercise 257)
+          (ID exercise 263)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 252)
+              (ID exercise 258)
               (ID exercise 101)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 251)
+              (ID exercise 257)
             )
             (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
             (ORIGINAL_TYPE
@@ -2647,45 +2759,45 @@
       (SOURCE "")
     )
     (Action login_shopkeeper
-      (ID exercise 266)
-      (Location "exercise.dc" 132)
+      (ID exercise 273)
+      (Location "exercise.dc" 134)
       (SIGNATURE login_shopkeeper(Shopkeeper, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT shopkeeper
-          (ID exercise 259)
-          (Location "exercise.dc" 129)
+          (ID exercise 265)
+          (Location "exercise.dc" 131)
           (TYPE Shopkeeper (ID exercise 152))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 259)
+            (ID exercise 265)
           )
         )
         (PARTICIPANT system
-          (ID exercise 260)
-          (Location "exercise.dc" 129)
+          (ID exercise 266)
+          (Location "exercise.dc" 131)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 260)
+            (ID exercise 266)
           )
         )
       )
       (History 
-        (ID exercise 266)
+        (ID exercise 273)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 262)
+          (GuardConjunct (ID exercise 268)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 260)
+                  (ID exercise 266)
                   (ID exercise 101)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2697,12 +2809,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 263)
+          (GuardConjunct (ID exercise 269)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 260)
+                  (ID exercise 266)
                   (ID exercise 103)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2714,12 +2826,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 264)
+          (GuardConjunct (ID exercise 270)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 260)
+                  (ID exercise 266)
                   (ID exercise 105)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2731,20 +2843,33 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
+          (GuardConjunct (ID exercise 271)
+            (VariableReference
+              (REFERENCES
+                (ID exercise 265)
+                (ID exercise 151)
+                (ID exercise 150)
+              )
+              (TYPE boolean (ID _emptyLayer 3))
+              (ORIGINAL_TYPE
+                (TYPE boolean (ID _emptyLayer 3))
+              )
+            )
+          )
       )
       )
       (BODY
         (Assignment
-          (ID exercise 265)
+          (ID exercise 272)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 260)
+              (ID exercise 266)
               (ID exercise 103)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 259)
+              (ID exercise 265)
             )
             (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
             (ORIGINAL_TYPE
@@ -2759,45 +2884,45 @@
       (SOURCE "")
     )
     (Action login_admin
-      (ID exercise 274)
-      (Location "exercise.dc" 136)
+      (ID exercise 281)
+      (Location "exercise.dc" 138)
       (SIGNATURE login_admin(Admin, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT admin
-          (ID exercise 267)
-          (Location "exercise.dc" 133)
+          (ID exercise 274)
+          (Location "exercise.dc" 135)
           (TYPE Admin (ID exercise 153))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 267)
+            (ID exercise 274)
           )
         )
         (PARTICIPANT system
-          (ID exercise 268)
-          (Location "exercise.dc" 133)
+          (ID exercise 275)
+          (Location "exercise.dc" 135)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 268)
+            (ID exercise 275)
           )
         )
       )
       (History 
-        (ID exercise 274)
+        (ID exercise 281)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 270)
+          (GuardConjunct (ID exercise 277)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 268)
+                  (ID exercise 275)
                   (ID exercise 101)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2809,12 +2934,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 271)
+          (GuardConjunct (ID exercise 278)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 268)
+                  (ID exercise 275)
                   (ID exercise 103)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2826,12 +2951,12 @@
                 (TYPE RefToAnyType (ID _emptyLayer 6))
               )            )
           )
-          (GuardConjunct (ID exercise 272)
+          (GuardConjunct (ID exercise 279)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 268)
+                  (ID exercise 275)
                   (ID exercise 105)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -2847,16 +2972,16 @@
       )
       (BODY
         (Assignment
-          (ID exercise 273)
+          (ID exercise 280)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 268)
+              (ID exercise 275)
               (ID exercise 105)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 267)
+              (ID exercise 274)
             )
             (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
             (ORIGINAL_TYPE
@@ -2871,45 +2996,45 @@
       (SOURCE "")
     )
     (Action logout_customer
-      (ID exercise 281)
-      (Location "exercise.dc" 143)
+      (ID exercise 288)
+      (Location "exercise.dc" 145)
       (SIGNATURE logout_customer(Customer, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT customer
-          (ID exercise 275)
-          (Location "exercise.dc" 139)
+          (ID exercise 282)
+          (Location "exercise.dc" 141)
           (TYPE Customer (ID exercise 147))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 275)
+            (ID exercise 282)
           )
         )
         (PARTICIPANT system
-          (ID exercise 276)
-          (Location "exercise.dc" 139)
+          (ID exercise 283)
+          (Location "exercise.dc" 141)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 276)
+            (ID exercise 283)
           )
         )
       )
       (History 
-        (ID exercise 281)
+        (ID exercise 288)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 278)
+          (GuardConjunct (ID exercise 285)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 276)
+                  (ID exercise 283)
                   (ID exercise 101)
                 )
                 (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
@@ -2919,7 +3044,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 275)
+                  (ID exercise 282)
                 )
                 (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
                 (ORIGINAL_TYPE
@@ -2935,10 +3060,10 @@
       )
       (BODY
         (Assignment
-          (ID exercise 279)
+          (ID exercise 286)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 276)
+              (ID exercise 283)
               (ID exercise 101)
             )
           )
@@ -2946,10 +3071,10 @@
             (TYPE _exercise_reference_to_Customer__GenName0 (ID exercise 100))
           )        )
         (Assignment
-          (ID exercise 280)
+          (ID exercise 287)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 275)
+              (ID exercise 282)
               (ID exercise 144)
             )
           )
@@ -2960,45 +3085,45 @@
       (SOURCE "")
     )
     (Action logout_shopkeeper
-      (ID exercise 287)
-      (Location "exercise.dc" 147)
+      (ID exercise 294)
+      (Location "exercise.dc" 149)
       (SIGNATURE logout_shopkeeper(Shopkeeper, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT shopkeeper
-          (ID exercise 282)
-          (Location "exercise.dc" 144)
+          (ID exercise 289)
+          (Location "exercise.dc" 146)
           (TYPE Shopkeeper (ID exercise 152))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 282)
+            (ID exercise 289)
           )
         )
         (PARTICIPANT system
-          (ID exercise 283)
-          (Location "exercise.dc" 144)
+          (ID exercise 290)
+          (Location "exercise.dc" 146)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 283)
+            (ID exercise 290)
           )
         )
       )
       (History 
-        (ID exercise 287)
+        (ID exercise 294)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 285)
+          (GuardConjunct (ID exercise 292)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 283)
+                  (ID exercise 290)
                   (ID exercise 103)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
@@ -3008,7 +3133,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 282)
+                  (ID exercise 289)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName1 (ID exercise 102))
                 (ORIGINAL_TYPE
@@ -3024,10 +3149,10 @@
       )
       (BODY
         (Assignment
-          (ID exercise 286)
+          (ID exercise 293)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 283)
+              (ID exercise 290)
               (ID exercise 103)
             )
           )
@@ -3038,103 +3163,14 @@
       (SOURCE "")
     )
     (Action logout_admin
-      (ID exercise 293)
-      (Location "exercise.dc" 151)
+      (ID exercise 300)
+      (Location "exercise.dc" 153)
       (SIGNATURE logout_admin(Admin, System))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT admin
-          (ID exercise 288)
-          (Location "exercise.dc" 148)
-          (TYPE Admin (ID exercise 153))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 288)
-          )
-        )
-        (PARTICIPANT system
-          (ID exercise 289)
-          (Location "exercise.dc" 148)
-          (TYPE System (ID exercise 106))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 289)
-          )
-        )
-      )
-      (History 
-        (ID exercise 293)
-      )
-        (Guard
-        (CONJUNCTS
-          (GuardConjunct (ID exercise 291)
-            (RelationalOperation =
-              (TYPE boolean (ID _emptyLayer 3))
-              (VariableReference
-                (REFERENCES
-                  (ID exercise 289)
-                  (ID exercise 105)
-                )
-                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
-                (ORIGINAL_TYPE
-                  (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
-                )
-              )
-              (ObjectReference
-                (REFERENCES
-                  (ID exercise 288)
-                )
-                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
-                (ORIGINAL_TYPE
-                  (TYPE Admin (ID exercise 153))
-                )
-              )
-              (TYPECONVERSION CONVERT_TO
-                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
-              )
-            )
-          )
-      )
-      )
-      (BODY
-        (Assignment
-          (ID exercise 292)
-          (NameReferenceLValue
-            (REFERENCES
-              (ID exercise 289)
-              (ID exercise 105)
-            )
-          )
-          (ReferenceLiteral null
-            (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
-          )        )
-      )
-      (SOURCE "")
-    )
-    (Action admin_register_shopkeeper
-      (ID exercise 303)
-      (Location "exercise.dc" 156)
-      (SIGNATURE admin_register_shopkeeper(System, Admin, Shopkeeper, Bookstore))
-      (EXCLUDED false)
-      (PARAMETERS
-        (PARTICIPANT system
-          (ID exercise 294)
-          (Location "exercise.dc" 152)
-          (TYPE System (ID exercise 106))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 294)
-          )
-        )
-        (PARTICIPANT admin
           (ID exercise 295)
-          (Location "exercise.dc" 152)
+          (Location "exercise.dc" 150)
           (TYPE Admin (ID exercise 153))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
@@ -3143,10 +3179,10 @@
             (ID exercise 295)
           )
         )
-        (PARTICIPANT shopkeeper
+        (PARTICIPANT system
           (ID exercise 296)
-          (Location "exercise.dc" 152)
-          (TYPE Shopkeeper (ID exercise 152))
+          (Location "exercise.dc" 150)
+          (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
@@ -3154,29 +3190,18 @@
             (ID exercise 296)
           )
         )
-        (PARTICIPANT bookstore
-          (ID exercise 297)
-          (Location "exercise.dc" 152)
-          (TYPE Bookstore (ID exercise 113))
-          NO_FAIRNESS
-          (SPECIALIZATION_CONDITIONS
-          )
-          (History 
-            (ID exercise 297)
-          )
-        )
       )
       (History 
-        (ID exercise 303)
+        (ID exercise 300)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 299)
+          (GuardConjunct (ID exercise 298)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 294)
+                  (ID exercise 296)
                   (ID exercise 105)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
@@ -3198,10 +3223,110 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 300)
+      )
+      )
+      (BODY
+        (Assignment
+          (ID exercise 299)
+          (NameReferenceLValue
+            (REFERENCES
+              (ID exercise 296)
+              (ID exercise 105)
+            )
+          )
+          (ReferenceLiteral null
+            (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+          )        )
+      )
+      (SOURCE "")
+    )
+    (Action admin_register_shopkeeper
+      (ID exercise 310)
+      (Location "exercise.dc" 158)
+      (SIGNATURE admin_register_shopkeeper(System, Admin, Shopkeeper, Bookstore))
+      (EXCLUDED false)
+      (PARAMETERS
+        (PARTICIPANT system
+          (ID exercise 301)
+          (Location "exercise.dc" 154)
+          (TYPE System (ID exercise 106))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 301)
+          )
+        )
+        (PARTICIPANT admin
+          (ID exercise 302)
+          (Location "exercise.dc" 154)
+          (TYPE Admin (ID exercise 153))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 302)
+          )
+        )
+        (PARTICIPANT shopkeeper
+          (ID exercise 303)
+          (Location "exercise.dc" 154)
+          (TYPE Shopkeeper (ID exercise 152))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 303)
+          )
+        )
+        (PARTICIPANT bookstore
+          (ID exercise 304)
+          (Location "exercise.dc" 154)
+          (TYPE Bookstore (ID exercise 113))
+          NO_FAIRNESS
+          (SPECIALIZATION_CONDITIONS
+          )
+          (History 
+            (ID exercise 304)
+          )
+        )
+      )
+      (History 
+        (ID exercise 310)
+      )
+        (Guard
+        (CONJUNCTS
+          (GuardConjunct (ID exercise 306)
+            (RelationalOperation =
+              (TYPE boolean (ID _emptyLayer 3))
+              (VariableReference
+                (REFERENCES
+                  (ID exercise 301)
+                  (ID exercise 105)
+                )
+                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                (ORIGINAL_TYPE
+                  (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                )
+              )
+              (ObjectReference
+                (REFERENCES
+                  (ID exercise 302)
+                )
+                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+                (ORIGINAL_TYPE
+                  (TYPE Admin (ID exercise 153))
+                )
+              )
+              (TYPECONVERSION CONVERT_TO
+                (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
+              )
+            )
+          )
+          (GuardConjunct (ID exercise 307)
             (VariableReference
               (REFERENCES
-                (ID exercise 296)
+                (ID exercise 303)
                 (ID exercise 151)
                 (ID exercise 149)
               )
@@ -3215,31 +3340,31 @@
       )
       (BODY
         (Assignment
-          (ID exercise 301)
+          (ID exercise 308)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 296)
+              (ID exercise 303)
               (ID exercise 151)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 155)
+            (Location "exercise.dc" 157)
             (TYPE yes (ID exercise 150))
             (ACTUALS
             )
           )
         )
         (Assignment
-          (ID exercise 302)
+          (ID exercise 309)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 297)
+              (ID exercise 304)
               (ID exercise 108)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 296)
+              (ID exercise 303)
             )
             (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
             (ORIGINAL_TYPE
@@ -3254,56 +3379,56 @@
       (SOURCE "")
     )
     (Action admin_add_new_bookstore
-      (ID exercise 311)
-      (Location "exercise.dc" 161)
+      (ID exercise 318)
+      (Location "exercise.dc" 163)
       (SIGNATURE admin_add_new_bookstore(System, Admin, Bookstore))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT system
-          (ID exercise 304)
-          (Location "exercise.dc" 158)
+          (ID exercise 311)
+          (Location "exercise.dc" 160)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 304)
+            (ID exercise 311)
           )
         )
         (PARTICIPANT admin
-          (ID exercise 305)
-          (Location "exercise.dc" 158)
+          (ID exercise 312)
+          (Location "exercise.dc" 160)
           (TYPE Admin (ID exercise 153))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 305)
+            (ID exercise 312)
           )
         )
         (PARTICIPANT bookstore
-          (ID exercise 306)
-          (Location "exercise.dc" 158)
+          (ID exercise 313)
+          (Location "exercise.dc" 160)
           (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 306)
+            (ID exercise 313)
           )
         )
       )
       (History 
-        (ID exercise 311)
+        (ID exercise 318)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 308)
+          (GuardConjunct (ID exercise 315)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 304)
+                  (ID exercise 311)
                   (ID exercise 105)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
@@ -3313,7 +3438,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 305)
+                  (ID exercise 312)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
                 (ORIGINAL_TYPE
@@ -3325,10 +3450,10 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 309)
+          (GuardConjunct (ID exercise 316)
             (VariableReference
               (REFERENCES
-                (ID exercise 306)
+                (ID exercise 313)
                 (ID exercise 112)
                 (ID exercise 111)
               )
@@ -3342,15 +3467,15 @@
       )
       (BODY
         (Assignment
-          (ID exercise 310)
+          (ID exercise 317)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 306)
+              (ID exercise 313)
               (ID exercise 112)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 160)
+            (Location "exercise.dc" 162)
             (TYPE yes (ID exercise 110))
             (ACTUALS
             )
@@ -3360,67 +3485,67 @@
       (SOURCE "")
     )
     (Action admin_delete_shopkeeper
-      (ID exercise 321)
-      (Location "exercise.dc" 167)
+      (ID exercise 328)
+      (Location "exercise.dc" 169)
       (SIGNATURE admin_delete_shopkeeper(System, Admin, Shopkeeper, Bookstore))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT system
-          (ID exercise 312)
-          (Location "exercise.dc" 163)
+          (ID exercise 319)
+          (Location "exercise.dc" 165)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 312)
+            (ID exercise 319)
           )
         )
         (PARTICIPANT admin
-          (ID exercise 313)
-          (Location "exercise.dc" 163)
+          (ID exercise 320)
+          (Location "exercise.dc" 165)
           (TYPE Admin (ID exercise 153))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 313)
+            (ID exercise 320)
           )
         )
         (PARTICIPANT shopkeeper
-          (ID exercise 314)
-          (Location "exercise.dc" 163)
+          (ID exercise 321)
+          (Location "exercise.dc" 165)
           (TYPE Shopkeeper (ID exercise 152))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 314)
+            (ID exercise 321)
           )
         )
         (PARTICIPANT bookstore
-          (ID exercise 315)
-          (Location "exercise.dc" 163)
+          (ID exercise 322)
+          (Location "exercise.dc" 165)
           (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 315)
+            (ID exercise 322)
           )
         )
       )
       (History 
-        (ID exercise 321)
+        (ID exercise 328)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 317)
+          (GuardConjunct (ID exercise 324)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 312)
+                  (ID exercise 319)
                   (ID exercise 105)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
@@ -3430,7 +3555,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 313)
+                  (ID exercise 320)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
                 (ORIGINAL_TYPE
@@ -3442,12 +3567,12 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 318)
+          (GuardConjunct (ID exercise 325)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 315)
+                  (ID exercise 322)
                   (ID exercise 108)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
@@ -3457,7 +3582,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 314)
+                  (ID exercise 321)
                 )
                 (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
                 (ORIGINAL_TYPE
@@ -3473,30 +3598,30 @@
       )
       (BODY
         (Assignment
-          (ID exercise 319)
+          (ID exercise 326)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 315)
+              (ID exercise 322)
               (ID exercise 112)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 166)
+            (Location "exercise.dc" 168)
             (TYPE no (ID exercise 111))
             (ACTUALS
             )
           )
         )
         (Assignment
-          (ID exercise 320)
+          (ID exercise 327)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 314)
+              (ID exercise 321)
               (ID exercise 151)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 166)
+            (Location "exercise.dc" 168)
             (TYPE no (ID exercise 149))
             (ACTUALS
             )
@@ -3506,67 +3631,67 @@
       (SOURCE "")
     )
     (Action admin_add_shopkeeper_to_bookstore
-      (ID exercise 333)
-      (Location "exercise.dc" 173)
+      (ID exercise 340)
+      (Location "exercise.dc" 175)
       (SIGNATURE admin_add_shopkeeper_to_bookstore(System, Admin, Shopkeeper, Bookstore))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT system
-          (ID exercise 322)
-          (Location "exercise.dc" 168)
+          (ID exercise 329)
+          (Location "exercise.dc" 170)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 322)
+            (ID exercise 329)
           )
         )
         (PARTICIPANT admin
-          (ID exercise 323)
-          (Location "exercise.dc" 168)
+          (ID exercise 330)
+          (Location "exercise.dc" 170)
           (TYPE Admin (ID exercise 153))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 323)
+            (ID exercise 330)
           )
         )
         (PARTICIPANT shopkeeper
-          (ID exercise 324)
-          (Location "exercise.dc" 168)
+          (ID exercise 331)
+          (Location "exercise.dc" 170)
           (TYPE Shopkeeper (ID exercise 152))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 324)
+            (ID exercise 331)
           )
         )
         (PARTICIPANT bookstore
-          (ID exercise 325)
-          (Location "exercise.dc" 168)
+          (ID exercise 332)
+          (Location "exercise.dc" 170)
           (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 325)
+            (ID exercise 332)
           )
         )
       )
       (History 
-        (ID exercise 333)
+        (ID exercise 340)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 327)
+          (GuardConjunct (ID exercise 334)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 322)
+                  (ID exercise 329)
                   (ID exercise 105)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
@@ -3576,7 +3701,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 323)
+                  (ID exercise 330)
                 )
                 (TYPE _exercise_reference_to_Admin__GenName2 (ID exercise 104))
                 (ORIGINAL_TYPE
@@ -3588,10 +3713,10 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 328)
+          (GuardConjunct (ID exercise 335)
             (VariableReference
               (REFERENCES
-                (ID exercise 325)
+                (ID exercise 332)
                 (ID exercise 112)
                 (ID exercise 111)
               )
@@ -3601,10 +3726,10 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 329)
+          (GuardConjunct (ID exercise 336)
             (VariableReference
               (REFERENCES
-                (ID exercise 324)
+                (ID exercise 331)
                 (ID exercise 151)
                 (ID exercise 149)
               )
@@ -3618,46 +3743,46 @@
       )
       (BODY
         (Assignment
-          (ID exercise 330)
+          (ID exercise 337)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 325)
+              (ID exercise 332)
               (ID exercise 112)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 171)
+            (Location "exercise.dc" 173)
             (TYPE yes (ID exercise 110))
             (ACTUALS
             )
           )
         )
         (Assignment
-          (ID exercise 331)
+          (ID exercise 338)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 324)
+              (ID exercise 331)
               (ID exercise 151)
             )
           )
           (Aggregate
-            (Location "exercise.dc" 172)
+            (Location "exercise.dc" 174)
             (TYPE yes (ID exercise 150))
             (ACTUALS
             )
           )
         )
         (Assignment
-          (ID exercise 332)
+          (ID exercise 339)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 325)
+              (ID exercise 332)
               (ID exercise 108)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 324)
+              (ID exercise 331)
             )
             (TYPE _exercise_reference_to_Shopkeeper__GenName3 (ID exercise 107))
             (ORIGINAL_TYPE
@@ -3672,67 +3797,67 @@
       (SOURCE "")
     )
     (Action search
-      (ID exercise 342)
-      (Location "exercise.dc" 177)
+      (ID exercise 349)
+      (Location "exercise.dc" 179)
       (SIGNATURE search(System, Book, Bookstore, Customer))
       (EXCLUDED false)
       (PARAMETERS
         (PARTICIPANT system
-          (ID exercise 334)
-          (Location "exercise.dc" 174)
+          (ID exercise 341)
+          (Location "exercise.dc" 176)
           (TYPE System (ID exercise 106))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 334)
+            (ID exercise 341)
           )
         )
         (PARTICIPANT book
-          (ID exercise 335)
-          (Location "exercise.dc" 174)
+          (ID exercise 342)
+          (Location "exercise.dc" 176)
           (TYPE Book (ID exercise 142))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 335)
+            (ID exercise 342)
           )
         )
         (PARTICIPANT bookstore
-          (ID exercise 336)
-          (Location "exercise.dc" 174)
+          (ID exercise 343)
+          (Location "exercise.dc" 176)
           (TYPE Bookstore (ID exercise 113))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 336)
+            (ID exercise 343)
           )
         )
         (PARTICIPANT customer
-          (ID exercise 337)
-          (Location "exercise.dc" 174)
+          (ID exercise 344)
+          (Location "exercise.dc" 176)
           (TYPE Customer (ID exercise 147))
           NO_FAIRNESS
           (SPECIALIZATION_CONDITIONS
           )
           (History 
-            (ID exercise 337)
+            (ID exercise 344)
           )
         )
       )
       (History 
-        (ID exercise 342)
+        (ID exercise 349)
       )
         (Guard
         (CONJUNCTS
-          (GuardConjunct (ID exercise 339)
+          (GuardConjunct (ID exercise 346)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 335)
+                  (ID exercise 342)
                   (ID exercise 128)
                 )
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
@@ -3742,7 +3867,7 @@
               )
               (ObjectReference
                 (REFERENCES
-                  (ID exercise 336)
+                  (ID exercise 343)
                 )
                 (TYPE _exercise_reference_to_Bookstore__GenName9 (ID exercise 127))
                 (ORIGINAL_TYPE
@@ -3754,12 +3879,12 @@
               )
             )
           )
-          (GuardConjunct (ID exercise 340)
+          (GuardConjunct (ID exercise 347)
             (RelationalOperation =
               (TYPE boolean (ID _emptyLayer 3))
               (VariableReference
                 (REFERENCES
-                  (ID exercise 335)
+                  (ID exercise 342)
                   (ID exercise 132)
                 )
                 (TYPE RefToAnyType (ID _emptyLayer 6))
@@ -3775,16 +3900,16 @@
       )
       (BODY
         (Assignment
-          (ID exercise 341)
+          (ID exercise 348)
           (NameReferenceLValue
             (REFERENCES
-              (ID exercise 337)
+              (ID exercise 344)
               (ID exercise 144)
             )
           )
           (ObjectReference
             (REFERENCES
-              (ID exercise 335)
+              (ID exercise 342)
             )
             (TYPE _exercise_reference_to_Book__GenName13 (ID exercise 143))
             (ORIGINAL_TYPE

@@ -39,7 +39,7 @@ layer exercise is
   
   -- Actions for bying and selling the book
   action insert_book_to_basket(book : Book; basket : Basket; customer : Customer; system: System) is
-    when book.in_basket = null and book.owned_customer = null and system.active_customer = customer and customer.browsing_currently = book do
+    when book.in_basket = null and book.owned_customer = null and system.active_customer = customer and customer.browsing_currently = book and customer.owns_basket = basket do
 	   if basket.next_empty'third then 
 	    basket.book_3:=book || basket.next_empty->full();
 	   end if
@@ -62,7 +62,8 @@ layer exercise is
 	   end if
 	   ||if basket.book_3 = book then 
 	    basket.book_3:=null;
-	   end if;
+	   end if
+	   ||book.in_basket := null;
   end;
 	--  when timeout occures or customer buys the basket or shopkeeper removes book from store   (this works automatically in system)
     action automatic_remove_book_from_basket(book : Book; basket : Basket; bookstore : Bookstore) is 
@@ -75,7 +76,8 @@ layer exercise is
 	   end if
 	   ||if basket.book_3 = book then 
 	    basket.book_3:=null;
-	   end if;
+	   end if
+	   ||book.in_basket := null;
     end;
   
   action buy_book_from_basket(book : Book; customer: Customer; basket : Basket) is 
@@ -109,11 +111,11 @@ layer exercise is
   
   -- Actions for adding and removing books from bookstore
   action add_book_to_store(shopkeeper : Shopkeeper; book : Book; bookstore : Bookstore; system: System) is
-    when book.in_basket = null and book.owned_customer = null and book.owned_bookstore = null and system.active_shopkeeper = shopkeeper do
+    when bookstore.created'yes and bookstore.owner = shopkeeper and book.in_basket = null and book.owned_customer = null and book.owned_bookstore = null and system.active_shopkeeper = shopkeeper do
 	   book.owned_bookstore := bookstore;
   end;
-  action remove_book_to_store(shopkeeper : Shopkeeper; book : Book; bookstore : Bookstore; system: System) is
-    when book.owned_customer = null and book.owned_bookstore = bookstore and system.active_shopkeeper = shopkeeper do
+  action remove_book_from_store(shopkeeper : Shopkeeper; book : Book; bookstore : Bookstore; system: System) is
+    when bookstore.created'yes and book.owned_customer = null and book.owned_bookstore = bookstore and bookstore.owner = shopkeeper and system.active_shopkeeper = shopkeeper do
 	   book.owned_bookstore := null;
   end;
   
@@ -127,7 +129,7 @@ layer exercise is
 	   system.active_customer := customer;
   end;
   action login_shopkeeper(shopkeeper : Shopkeeper; system : System) is
-    when system.active_customer = null and system.active_shopkeeper = null and system.active_admin = null do
+    when system.active_customer = null and system.active_shopkeeper = null and system.active_admin = null and shopkeeper.registed'yes do
 	   system.active_shopkeeper := shopkeeper;
   end;
   action login_admin(admin : Admin; system : System) is

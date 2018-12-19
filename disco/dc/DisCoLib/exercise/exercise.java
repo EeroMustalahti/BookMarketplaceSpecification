@@ -19,7 +19,7 @@ public class exercise extends DisCo_specification_ {
     actions_.addElement(new $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$(actions_.size(), this));
     actions_.addElement(new $_browse_book$$$_Customer2$$$_Book0$$$_Bookstore4$$(actions_.size(), this));
     actions_.addElement(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$(actions_.size(), this));
-    actions_.addElement(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$(actions_.size(), this));
+    actions_.addElement(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$(actions_.size(), this));
     actions_.addElement(new $_login_customer$$$_Customer2$$$_System3$$(actions_.size(), this));
     actions_.addElement(new $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$(actions_.size(), this));
     actions_.addElement(new $_login_admin$$$_Admin6$$$_System3$$(actions_.size(), this));
@@ -2775,7 +2775,7 @@ class $_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$ exte
     $_Customer2_interface_ $_customer40 = selected_combination_.$_customer40;
     $_System3_interface_ $_system41 = selected_combination_.$_system41;
     Parameter_real_ $_now42 = selected_combination_.$_now42;
-    return ((((($_book38.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).op_and_(($_book38.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_system41.get_$_active_customer22_().op_eq_((new DisCo_int_(((DisCo_class_)$_customer40).objectID_)))))).op_and_(($_customer40.get_$_browsing_currently35_().op_eq_((new DisCo_int_(((DisCo_class_)$_book38).objectID_))))))).get_val_(false);
+    return (((((($_book38.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).op_and_(($_book38.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_system41.get_$_active_customer22_().op_eq_((new DisCo_int_(((DisCo_class_)$_customer40).objectID_)))))).op_and_(($_customer40.get_$_browsing_currently35_().op_eq_((new DisCo_int_(((DisCo_class_)$_book38).objectID_)))))).op_and_(($_customer40.get_$_owns_basket36_().op_eq_((new DisCo_int_(((DisCo_class_)$_basket39).objectID_))))))).get_val_(false);
   }
   //Partial guards from noParamsTable_
   public boolean partial_guard_1_($_Book0_interface_ $_book38) {
@@ -2792,6 +2792,10 @@ class $_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$ exte
   //Partial guards from noParamsTable_
   public boolean partial_guard_4_($_Book0_interface_ $_book38, $_Customer2_interface_ $_customer40) {
     return ($_customer40.get_$_browsing_currently35_().op_eq_((new DisCo_int_(((DisCo_class_)$_book38).objectID_)))).get_val_(false);
+  }
+  //Partial guards from noParamsTable_
+  public boolean partial_guard_5_($_Basket1_interface_ $_basket39, $_Customer2_interface_ $_customer40) {
+    return ($_customer40.get_$_owns_basket36_().op_eq_((new DisCo_int_(((DisCo_class_)$_basket39).objectID_)))).get_val_(false);
   }
   public boolean eval_guard_() {
     Combinations_$_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$_ combs_ = new Combinations_$_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$_(my_specification_);
@@ -2857,6 +2861,24 @@ class $_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$ exte
       $_Customer2_interface_ $_customer40 = $$$_one_combination_$$$.$_customer40;
       if (partial_guard_4_($_book38, $_customer40)) {
         partial_result_.add_combination_(new $_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$_combination_($_book38, null, $_customer40, null, my_specification_));
+      }
+    }
+    partial_result_.remove_invalid_combinations_();
+    combs_ = combs_.combine(partial_result_);
+    if (combs_.empty()) {
+      enabled_bit_ = false;
+      return false;
+    }
+    partial_result_.clear();
+    combs_.generate_explicit_combinations_$_basket39();
+    combs_.generate_explicit_combinations_$_customer40();
+    comb_i_ = combs_.combinations.iterator();
+    while (comb_i_.hasNext()) {
+      $_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$_combination_) comb_i_.next();
+      $_Basket1_interface_ $_basket39 = $$$_one_combination_$$$.$_basket39;
+      $_Customer2_interface_ $_customer40 = $$$_one_combination_$$$.$_customer40;
+      if (partial_guard_5_($_basket39, $_customer40)) {
+        partial_result_.add_combination_(new $_insert_book_to_basket$$$_Book0$$$_Basket1$$$_Customer2$$$_System3$$_combination_(null, $_basket39, $_customer40, null, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -3481,6 +3503,7 @@ class $_customer_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$$_Cu
   DisCo_int_ rhs_14;
   DisCo_int_ rhs_15;
   DisCo_int_ rhs_16;
+  DisCo_int_ rhs_17;
   boolean treeCondition_3;
   boolean treeCondition_4;
   boolean treeCondition_5;
@@ -3547,30 +3570,36 @@ class $_customer_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$$_Cu
       treeCondition_5 = true;
       rhs_16 = (new DisCo_int_(-1));
     }
+    rhs_17 = (new DisCo_int_(-1));
   }
 
   public void actual_execute($_Book0_interface_ $_book43, $_Basket1_interface_ $_basket44, $_Bookstore4_interface_ $_bookstore45, $_Customer2_interface_ $_customer46, Parameter_real_ $_now47) throws Assertion_exception_ {
     try {
       if(treeCondition_3){
         $_basket44.set_$_book_127_(rhs_14.get_val_());
-        Iterator iEL17 = my_specification_.getEngineListeners_();
-        while(iEL17.hasNext()) {
-          ((EngineListener)(iEL17.next())).objectStateChanged((DisCo_class_)$_basket44);
-        }
-      }
-      if(treeCondition_4){
-        $_basket44.set_$_book_228_(rhs_15.get_val_());
         Iterator iEL18 = my_specification_.getEngineListeners_();
         while(iEL18.hasNext()) {
           ((EngineListener)(iEL18.next())).objectStateChanged((DisCo_class_)$_basket44);
         }
       }
-      if(treeCondition_5){
-        $_basket44.set_$_book_329_(rhs_16.get_val_());
+      if(treeCondition_4){
+        $_basket44.set_$_book_228_(rhs_15.get_val_());
         Iterator iEL19 = my_specification_.getEngineListeners_();
         while(iEL19.hasNext()) {
           ((EngineListener)(iEL19.next())).objectStateChanged((DisCo_class_)$_basket44);
         }
+      }
+      if(treeCondition_5){
+        $_basket44.set_$_book_329_(rhs_16.get_val_());
+        Iterator iEL20 = my_specification_.getEngineListeners_();
+        while(iEL20.hasNext()) {
+          ((EngineListener)(iEL20.next())).objectStateChanged((DisCo_class_)$_basket44);
+        }
+      }
+      $_book43.set_$_in_basket33_(rhs_17.get_val_());
+      Iterator iEL21 = my_specification_.getEngineListeners_();
+      while(iEL21.hasNext()) {
+        ((EngineListener)(iEL21.next())).objectStateChanged((DisCo_class_)$_book43);
       }
       my_specification_.rt_.set_omega_($_now47.realval);
       return;
@@ -4116,9 +4145,10 @@ class $_customer_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$$_Cu
 class $_automatic_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$ extends DisCo_action_ {
   Combinations_$_automatic_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$_ enabled_for_;
 
-  DisCo_int_ rhs_20;
-  DisCo_int_ rhs_21;
   DisCo_int_ rhs_22;
+  DisCo_int_ rhs_23;
+  DisCo_int_ rhs_24;
+  DisCo_int_ rhs_25;
   boolean treeCondition_6;
   boolean treeCondition_7;
   boolean treeCondition_8;
@@ -4172,42 +4202,48 @@ class $_automatic_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$ ex
     treeCondition_6 = false;
     if(($_basket49.get_$_book_127_().op_eq_((new DisCo_int_(((DisCo_class_)$_book48).objectID_)))).get_val_()){
       treeCondition_6 = true;
-      rhs_20 = (new DisCo_int_(-1));
+      rhs_22 = (new DisCo_int_(-1));
     }
     treeCondition_7 = false;
     if(($_basket49.get_$_book_228_().op_eq_((new DisCo_int_(((DisCo_class_)$_book48).objectID_)))).get_val_()){
       treeCondition_7 = true;
-      rhs_21 = (new DisCo_int_(-1));
+      rhs_23 = (new DisCo_int_(-1));
     }
     treeCondition_8 = false;
     if(($_basket49.get_$_book_329_().op_eq_((new DisCo_int_(((DisCo_class_)$_book48).objectID_)))).get_val_()){
       treeCondition_8 = true;
-      rhs_22 = (new DisCo_int_(-1));
+      rhs_24 = (new DisCo_int_(-1));
     }
+    rhs_25 = (new DisCo_int_(-1));
   }
 
   public void actual_execute($_Book0_interface_ $_book48, $_Basket1_interface_ $_basket49, $_Bookstore4_interface_ $_bookstore50, Parameter_real_ $_now51) throws Assertion_exception_ {
     try {
       if(treeCondition_6){
-        $_basket49.set_$_book_127_(rhs_20.get_val_());
-        Iterator iEL23 = my_specification_.getEngineListeners_();
-        while(iEL23.hasNext()) {
-          ((EngineListener)(iEL23.next())).objectStateChanged((DisCo_class_)$_basket49);
+        $_basket49.set_$_book_127_(rhs_22.get_val_());
+        Iterator iEL26 = my_specification_.getEngineListeners_();
+        while(iEL26.hasNext()) {
+          ((EngineListener)(iEL26.next())).objectStateChanged((DisCo_class_)$_basket49);
         }
       }
       if(treeCondition_7){
-        $_basket49.set_$_book_228_(rhs_21.get_val_());
-        Iterator iEL24 = my_specification_.getEngineListeners_();
-        while(iEL24.hasNext()) {
-          ((EngineListener)(iEL24.next())).objectStateChanged((DisCo_class_)$_basket49);
+        $_basket49.set_$_book_228_(rhs_23.get_val_());
+        Iterator iEL27 = my_specification_.getEngineListeners_();
+        while(iEL27.hasNext()) {
+          ((EngineListener)(iEL27.next())).objectStateChanged((DisCo_class_)$_basket49);
         }
       }
       if(treeCondition_8){
-        $_basket49.set_$_book_329_(rhs_22.get_val_());
-        Iterator iEL25 = my_specification_.getEngineListeners_();
-        while(iEL25.hasNext()) {
-          ((EngineListener)(iEL25.next())).objectStateChanged((DisCo_class_)$_basket49);
+        $_basket49.set_$_book_329_(rhs_24.get_val_());
+        Iterator iEL28 = my_specification_.getEngineListeners_();
+        while(iEL28.hasNext()) {
+          ((EngineListener)(iEL28.next())).objectStateChanged((DisCo_class_)$_basket49);
         }
+      }
+      $_book48.set_$_in_basket33_(rhs_25.get_val_());
+      Iterator iEL29 = my_specification_.getEngineListeners_();
+      while(iEL29.hasNext()) {
+        ((EngineListener)(iEL29.next())).objectStateChanged((DisCo_class_)$_book48);
       }
       my_specification_.rt_.set_omega_($_now51.realval);
       return;
@@ -4687,10 +4723,6 @@ class $_automatic_remove_book_from_basket$$$_Book0$$$_Basket1$$$_Bookstore4$$_co
 class $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$ extends DisCo_action_ {
   Combinations_$_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$_ enabled_for_;
 
-  DisCo_int_ rhs_26;
-  DisCo_int_ rhs_27;
-  DisCo_int_ rhs_28;
-  DisCo_int_ rhs_29;
   DisCo_int_ rhs_30;
   DisCo_int_ rhs_31;
   DisCo_int_ rhs_32;
@@ -4699,7 +4731,11 @@ class $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$ extends DisCo_ac
   DisCo_int_ rhs_35;
   DisCo_int_ rhs_36;
   DisCo_int_ rhs_37;
-  $_first9_interface_ rhs_38;
+  DisCo_int_ rhs_38;
+  DisCo_int_ rhs_39;
+  DisCo_int_ rhs_40;
+  DisCo_int_ rhs_41;
+  $_first9_interface_ rhs_42;
   boolean treeCondition_9;
   boolean treeCondition_10;
   boolean treeCondition_11;
@@ -4751,55 +4787,33 @@ class $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$ extends DisCo_ac
     treeCondition_9 = false;
     if(($_basket54.get_$_book_127_().op_eq_((new DisCo_int_(((DisCo_class_)$_book52).objectID_)))).get_val_()){
       treeCondition_9 = true;
-      rhs_26 = (new DisCo_int_(-1));
-      rhs_27 = (new DisCo_int_(-1));
-      rhs_28 = (new DisCo_int_(((DisCo_class_)$_customer53).objectID_));
-      rhs_29 = (new DisCo_int_(-1));
-    }
-    treeCondition_10 = false;
-    if(($_basket54.get_$_book_228_().op_eq_((new DisCo_int_(((DisCo_class_)$_book52).objectID_)))).get_val_()){
-      treeCondition_10 = true;
       rhs_30 = (new DisCo_int_(-1));
       rhs_31 = (new DisCo_int_(-1));
       rhs_32 = (new DisCo_int_(((DisCo_class_)$_customer53).objectID_));
       rhs_33 = (new DisCo_int_(-1));
     }
-    treeCondition_11 = false;
-    if(($_basket54.get_$_book_329_().op_eq_((new DisCo_int_(((DisCo_class_)$_book52).objectID_)))).get_val_()){
-      treeCondition_11 = true;
+    treeCondition_10 = false;
+    if(($_basket54.get_$_book_228_().op_eq_((new DisCo_int_(((DisCo_class_)$_book52).objectID_)))).get_val_()){
+      treeCondition_10 = true;
       rhs_34 = (new DisCo_int_(-1));
       rhs_35 = (new DisCo_int_(-1));
       rhs_36 = (new DisCo_int_(((DisCo_class_)$_customer53).objectID_));
       rhs_37 = (new DisCo_int_(-1));
     }
-    rhs_38 = new $_Basket1.$_first9();
+    treeCondition_11 = false;
+    if(($_basket54.get_$_book_329_().op_eq_((new DisCo_int_(((DisCo_class_)$_book52).objectID_)))).get_val_()){
+      treeCondition_11 = true;
+      rhs_38 = (new DisCo_int_(-1));
+      rhs_39 = (new DisCo_int_(-1));
+      rhs_40 = (new DisCo_int_(((DisCo_class_)$_customer53).objectID_));
+      rhs_41 = (new DisCo_int_(-1));
+    }
+    rhs_42 = new $_Basket1.$_first9();
   }
 
   public void actual_execute($_Book0_interface_ $_book52, $_Customer2_interface_ $_customer53, $_Basket1_interface_ $_basket54, Parameter_real_ $_now55) throws Assertion_exception_ {
     try {
       if(treeCondition_9){
-        $_book52.set_$_owned_bookstore31_(rhs_26.get_val_());
-        Iterator iEL39 = my_specification_.getEngineListeners_();
-        while(iEL39.hasNext()) {
-          ((EngineListener)(iEL39.next())).objectStateChanged((DisCo_class_)$_book52);
-        }
-        $_book52.set_$_in_basket33_(rhs_27.get_val_());
-        Iterator iEL40 = my_specification_.getEngineListeners_();
-        while(iEL40.hasNext()) {
-          ((EngineListener)(iEL40.next())).objectStateChanged((DisCo_class_)$_book52);
-        }
-        $_book52.set_$_owned_customer32_(rhs_28.get_val_());
-        Iterator iEL41 = my_specification_.getEngineListeners_();
-        while(iEL41.hasNext()) {
-          ((EngineListener)(iEL41.next())).objectStateChanged((DisCo_class_)$_book52);
-        }
-        $_basket54.set_$_book_127_(rhs_29.get_val_());
-        Iterator iEL42 = my_specification_.getEngineListeners_();
-        while(iEL42.hasNext()) {
-          ((EngineListener)(iEL42.next())).objectStateChanged((DisCo_class_)$_basket54);
-        }
-      }
-      if(treeCondition_10){
         $_book52.set_$_owned_bookstore31_(rhs_30.get_val_());
         Iterator iEL43 = my_specification_.getEngineListeners_();
         while(iEL43.hasNext()) {
@@ -4815,13 +4829,13 @@ class $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$ extends DisCo_ac
         while(iEL45.hasNext()) {
           ((EngineListener)(iEL45.next())).objectStateChanged((DisCo_class_)$_book52);
         }
-        $_basket54.set_$_book_228_(rhs_33.get_val_());
+        $_basket54.set_$_book_127_(rhs_33.get_val_());
         Iterator iEL46 = my_specification_.getEngineListeners_();
         while(iEL46.hasNext()) {
           ((EngineListener)(iEL46.next())).objectStateChanged((DisCo_class_)$_basket54);
         }
       }
-      if(treeCondition_11){
+      if(treeCondition_10){
         $_book52.set_$_owned_bookstore31_(rhs_34.get_val_());
         Iterator iEL47 = my_specification_.getEngineListeners_();
         while(iEL47.hasNext()) {
@@ -4843,10 +4857,32 @@ class $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$ extends DisCo_ac
           ((EngineListener)(iEL50.next())).objectStateChanged((DisCo_class_)$_basket54);
         }
       }
-      $_basket54.set_$_next_empty30_((DisCo_type_) rhs_38);
-      Iterator iEL51 = my_specification_.getEngineListeners_();
-      while(iEL51.hasNext()) {
-        ((EngineListener)(iEL51.next())).objectStateChanged((DisCo_class_)$_basket54);
+      if(treeCondition_11){
+        $_book52.set_$_owned_bookstore31_(rhs_38.get_val_());
+        Iterator iEL51 = my_specification_.getEngineListeners_();
+        while(iEL51.hasNext()) {
+          ((EngineListener)(iEL51.next())).objectStateChanged((DisCo_class_)$_book52);
+        }
+        $_book52.set_$_in_basket33_(rhs_39.get_val_());
+        Iterator iEL52 = my_specification_.getEngineListeners_();
+        while(iEL52.hasNext()) {
+          ((EngineListener)(iEL52.next())).objectStateChanged((DisCo_class_)$_book52);
+        }
+        $_book52.set_$_owned_customer32_(rhs_40.get_val_());
+        Iterator iEL53 = my_specification_.getEngineListeners_();
+        while(iEL53.hasNext()) {
+          ((EngineListener)(iEL53.next())).objectStateChanged((DisCo_class_)$_book52);
+        }
+        $_basket54.set_$_book_228_(rhs_41.get_val_());
+        Iterator iEL54 = my_specification_.getEngineListeners_();
+        while(iEL54.hasNext()) {
+          ((EngineListener)(iEL54.next())).objectStateChanged((DisCo_class_)$_basket54);
+        }
+      }
+      $_basket54.set_$_next_empty30_((DisCo_type_) rhs_42);
+      Iterator iEL55 = my_specification_.getEngineListeners_();
+      while(iEL55.hasNext()) {
+        ((EngineListener)(iEL55.next())).objectStateChanged((DisCo_class_)$_basket54);
       }
       my_specification_.rt_.set_omega_($_now55.realval);
       return;
@@ -5326,7 +5362,7 @@ class $_buy_book_from_basket$$$_Book0$$$_Customer2$$$_Basket1$$_combination_ imp
 class $_browse_book$$$_Customer2$$$_Book0$$$_Bookstore4$$ extends DisCo_action_ {
   Combinations_$_browse_book$$$_Customer2$$$_Book0$$$_Bookstore4$$_ enabled_for_;
 
-  DisCo_int_ rhs_52;
+  DisCo_int_ rhs_56;
   public $_browse_book$$$_Customer2$$$_Book0$$$_Bookstore4$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -5392,15 +5428,15 @@ class $_browse_book$$$_Customer2$$$_Book0$$$_Bookstore4$$ extends DisCo_action_ 
     return enabled_bit_;
   }
   public void initialize_execute($_Customer2_interface_ $_customer56, $_Book0_interface_ $_book57, $_Bookstore4_interface_ $_bookstore58, Parameter_real_ $_now59) throws Assertion_exception_ {
-    rhs_52 = (new DisCo_int_(((DisCo_class_)$_book57).objectID_));
+    rhs_56 = (new DisCo_int_(((DisCo_class_)$_book57).objectID_));
   }
 
   public void actual_execute($_Customer2_interface_ $_customer56, $_Book0_interface_ $_book57, $_Bookstore4_interface_ $_bookstore58, Parameter_real_ $_now59) throws Assertion_exception_ {
     try {
-      $_customer56.set_$_browsing_currently35_(rhs_52.get_val_());
-      Iterator iEL53 = my_specification_.getEngineListeners_();
-      while(iEL53.hasNext()) {
-        ((EngineListener)(iEL53.next())).objectStateChanged((DisCo_class_)$_customer56);
+      $_customer56.set_$_browsing_currently35_(rhs_56.get_val_());
+      Iterator iEL57 = my_specification_.getEngineListeners_();
+      while(iEL57.hasNext()) {
+        ((EngineListener)(iEL57.next())).objectStateChanged((DisCo_class_)$_customer56);
       }
       my_specification_.rt_.set_omega_($_now59.realval);
       return;
@@ -5880,7 +5916,7 @@ class $_browse_book$$$_Customer2$$$_Book0$$$_Bookstore4$$_combination_ implement
 class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ extends DisCo_action_ {
   Combinations_$_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_54;
+  DisCo_int_ rhs_58;
   public $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -5894,22 +5930,30 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ ext
     $_Bookstore4_interface_ $_bookstore62 = selected_combination_.$_bookstore62;
     $_System3_interface_ $_system63 = selected_combination_.$_system63;
     Parameter_real_ $_now64 = selected_combination_.$_now64;
-    return ((((($_book61.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).op_and_(($_book61.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_book61.get_$_owned_bookstore31_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_system63.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper60).objectID_))))))).get_val_(false);
+    return ((((((new DisCo_bool_($_bookstore62.get_$_created26_() instanceof $_Bookstore4.$_yes7).op_and_(($_bookstore62.get_$_owner25_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper60).objectID_)))))).op_and_(($_book61.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_book61.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_book61.get_$_owned_bookstore31_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_system63.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper60).objectID_))))))).get_val_(false);
   }
   //Partial guards from noParamsTable_
-  public boolean partial_guard_1_($_Book0_interface_ $_book61) {
-    return ($_book61.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
+  public boolean partial_guard_1_($_Bookstore4_interface_ $_bookstore62) {
+    return new DisCo_bool_($_bookstore62.get_$_created26_() instanceof $_Bookstore4.$_yes7).get_val_(false);
   }
   //Partial guards from noParamsTable_
-  public boolean partial_guard_2_($_Book0_interface_ $_book61) {
-    return ($_book61.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
+  public boolean partial_guard_2_($_Shopkeeper5_interface_ $_shopkeeper60, $_Bookstore4_interface_ $_bookstore62) {
+    return ($_bookstore62.get_$_owner25_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper60).objectID_)))).get_val_(false);
   }
   //Partial guards from noParamsTable_
   public boolean partial_guard_3_($_Book0_interface_ $_book61) {
+    return ($_book61.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
+  }
+  //Partial guards from noParamsTable_
+  public boolean partial_guard_4_($_Book0_interface_ $_book61) {
+    return ($_book61.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
+  }
+  //Partial guards from noParamsTable_
+  public boolean partial_guard_5_($_Book0_interface_ $_book61) {
     return ($_book61.get_$_owned_bookstore31_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
   }
   //Partial guards from noParamsTable_
-  public boolean partial_guard_4_($_Shopkeeper5_interface_ $_shopkeeper60, $_System3_interface_ $_system63) {
+  public boolean partial_guard_6_($_Shopkeeper5_interface_ $_shopkeeper60, $_System3_interface_ $_system63) {
     return ($_system63.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper60).objectID_)))).get_val_(false);
   }
   public boolean eval_guard_() {
@@ -5917,13 +5961,13 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ ext
     Combinations_$_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ partial_result_ = new Combinations_$_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
     Iterator comb_i_;
     partial_result_.clear();
-    combs_.generate_explicit_combinations_$_book61();
+    combs_.generate_explicit_combinations_$_bookstore62();
     comb_i_ = combs_.combinations.iterator();
     while (comb_i_.hasNext()) {
       $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
-      $_Book0_interface_ $_book61 = $$$_one_combination_$$$.$_book61;
-      if (partial_guard_1_($_book61)) {
-        partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book61, null, null, my_specification_));
+      $_Bookstore4_interface_ $_bookstore62 = $$$_one_combination_$$$.$_bookstore62;
+      if (partial_guard_1_($_bookstore62)) {
+        partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, $_bookstore62, null, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -5933,13 +5977,15 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ ext
       return false;
     }
     partial_result_.clear();
-    combs_.generate_explicit_combinations_$_book61();
+    combs_.generate_explicit_combinations_$_shopkeeper60();
+    combs_.generate_explicit_combinations_$_bookstore62();
     comb_i_ = combs_.combinations.iterator();
     while (comb_i_.hasNext()) {
       $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
-      $_Book0_interface_ $_book61 = $$$_one_combination_$$$.$_book61;
-      if (partial_guard_2_($_book61)) {
-        partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book61, null, null, my_specification_));
+      $_Shopkeeper5_interface_ $_shopkeeper60 = $$$_one_combination_$$$.$_shopkeeper60;
+      $_Bookstore4_interface_ $_bookstore62 = $$$_one_combination_$$$.$_bookstore62;
+      if (partial_guard_2_($_shopkeeper60, $_bookstore62)) {
+        partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper60, null, $_bookstore62, null, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -5965,6 +6011,38 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ ext
       return false;
     }
     partial_result_.clear();
+    combs_.generate_explicit_combinations_$_book61();
+    comb_i_ = combs_.combinations.iterator();
+    while (comb_i_.hasNext()) {
+      $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_Book0_interface_ $_book61 = $$$_one_combination_$$$.$_book61;
+      if (partial_guard_4_($_book61)) {
+        partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book61, null, null, my_specification_));
+      }
+    }
+    partial_result_.remove_invalid_combinations_();
+    combs_ = combs_.combine(partial_result_);
+    if (combs_.empty()) {
+      enabled_bit_ = false;
+      return false;
+    }
+    partial_result_.clear();
+    combs_.generate_explicit_combinations_$_book61();
+    comb_i_ = combs_.combinations.iterator();
+    while (comb_i_.hasNext()) {
+      $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_Book0_interface_ $_book61 = $$$_one_combination_$$$.$_book61;
+      if (partial_guard_5_($_book61)) {
+        partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book61, null, null, my_specification_));
+      }
+    }
+    partial_result_.remove_invalid_combinations_();
+    combs_ = combs_.combine(partial_result_);
+    if (combs_.empty()) {
+      enabled_bit_ = false;
+      return false;
+    }
+    partial_result_.clear();
     combs_.generate_explicit_combinations_$_shopkeeper60();
     combs_.generate_explicit_combinations_$_system63();
     comb_i_ = combs_.combinations.iterator();
@@ -5972,7 +6050,7 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ ext
       $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
       $_Shopkeeper5_interface_ $_shopkeeper60 = $$$_one_combination_$$$.$_shopkeeper60;
       $_System3_interface_ $_system63 = $$$_one_combination_$$$.$_system63;
-      if (partial_guard_4_($_shopkeeper60, $_system63)) {
+      if (partial_guard_6_($_shopkeeper60, $_system63)) {
         partial_result_.add_combination_(new $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper60, null, null, $_system63, my_specification_));
       }
     }
@@ -5987,15 +6065,15 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ ext
     return enabled_bit_;
   }
   public void initialize_execute($_Shopkeeper5_interface_ $_shopkeeper60, $_Book0_interface_ $_book61, $_Bookstore4_interface_ $_bookstore62, $_System3_interface_ $_system63, Parameter_real_ $_now64) throws Assertion_exception_ {
-    rhs_54 = (new DisCo_int_(((DisCo_class_)$_bookstore62).objectID_));
+    rhs_58 = (new DisCo_int_(((DisCo_class_)$_bookstore62).objectID_));
   }
 
   public void actual_execute($_Shopkeeper5_interface_ $_shopkeeper60, $_Book0_interface_ $_book61, $_Bookstore4_interface_ $_bookstore62, $_System3_interface_ $_system63, Parameter_real_ $_now64) throws Assertion_exception_ {
     try {
-      $_book61.set_$_owned_bookstore31_(rhs_54.get_val_());
-      Iterator iEL55 = my_specification_.getEngineListeners_();
-      while(iEL55.hasNext()) {
-        ((EngineListener)(iEL55.next())).objectStateChanged((DisCo_class_)$_book61);
+      $_book61.set_$_owned_bookstore31_(rhs_58.get_val_());
+      Iterator iEL59 = my_specification_.getEngineListeners_();
+      while(iEL59.hasNext()) {
+        ((EngineListener)(iEL59.next())).objectStateChanged((DisCo_class_)$_book61);
       }
       my_specification_.rt_.set_omega_($_now64.realval);
       return;
@@ -6538,16 +6616,16 @@ class $_add_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_com
   }
 }
 
-class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ extends DisCo_action_ {
-  Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ enabled_for_;
+class $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ extends DisCo_action_ {
+  Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_56;
-  public $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$(int id, DisCo_specification_ my_specification) {
+  DisCo_int_ rhs_60;
+  public $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
-  $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ selected_combination_ = new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(my_specification_);
+  $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ selected_combination_ = new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(my_specification_);
   public String get_name_() {
-    return "remove_book_to_store";
+    return "remove_book_from_store";
   }
   public boolean eval_guard_for_selected_combination_() {
     $_Shopkeeper5_interface_ $_shopkeeper65 = selected_combination_.$_shopkeeper65;
@@ -6555,11 +6633,11 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     $_Bookstore4_interface_ $_bookstore67 = selected_combination_.$_bookstore67;
     $_System3_interface_ $_system68 = selected_combination_.$_system68;
     Parameter_real_ $_now69 = selected_combination_.$_now69;
-    return ((((($_book66.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).op_and_(($_book66.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_book66.get_$_owned_bookstore31_().op_eq_((new DisCo_int_(((DisCo_class_)$_bookstore67).objectID_)))))).op_and_(($_system68.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper65).objectID_))))))).get_val_(false);
+    return (((((new DisCo_bool_($_bookstore67.get_$_created26_() instanceof $_Bookstore4.$_yes7).op_and_(($_book66.get_$_owned_customer32_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_book66.get_$_owned_bookstore31_().op_eq_((new DisCo_int_(((DisCo_class_)$_bookstore67).objectID_)))))).op_and_(($_bookstore67.get_$_owner25_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper65).objectID_)))))).op_and_(($_system68.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper65).objectID_))))))).get_val_(false);
   }
   //Partial guards from noParamsTable_
-  public boolean partial_guard_1_($_Book0_interface_ $_book66) {
-    return ($_book66.get_$_in_basket33_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
+  public boolean partial_guard_1_($_Bookstore4_interface_ $_bookstore67) {
+    return new DisCo_bool_($_bookstore67.get_$_created26_() instanceof $_Bookstore4.$_yes7).get_val_(false);
   }
   //Partial guards from noParamsTable_
   public boolean partial_guard_2_($_Book0_interface_ $_book66) {
@@ -6570,21 +6648,25 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     return ($_book66.get_$_owned_bookstore31_().op_eq_((new DisCo_int_(((DisCo_class_)$_bookstore67).objectID_)))).get_val_(false);
   }
   //Partial guards from noParamsTable_
-  public boolean partial_guard_4_($_Shopkeeper5_interface_ $_shopkeeper65, $_System3_interface_ $_system68) {
+  public boolean partial_guard_4_($_Shopkeeper5_interface_ $_shopkeeper65, $_Bookstore4_interface_ $_bookstore67) {
+    return ($_bookstore67.get_$_owner25_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper65).objectID_)))).get_val_(false);
+  }
+  //Partial guards from noParamsTable_
+  public boolean partial_guard_5_($_Shopkeeper5_interface_ $_shopkeeper65, $_System3_interface_ $_system68) {
     return ($_system68.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(((DisCo_class_)$_shopkeeper65).objectID_)))).get_val_(false);
   }
   public boolean eval_guard_() {
-    Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ combs_ = new Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
-    Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ partial_result_ = new Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
+    Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ combs_ = new Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
+    Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ partial_result_ = new Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
     Iterator comb_i_;
     partial_result_.clear();
-    combs_.generate_explicit_combinations_$_book66();
+    combs_.generate_explicit_combinations_$_bookstore67();
     comb_i_ = combs_.combinations.iterator();
     while (comb_i_.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
-      $_Book0_interface_ $_book66 = $$$_one_combination_$$$.$_book66;
-      if (partial_guard_1_($_book66)) {
-        partial_result_.add_combination_(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book66, null, null, my_specification_));
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_Bookstore4_interface_ $_bookstore67 = $$$_one_combination_$$$.$_bookstore67;
+      if (partial_guard_1_($_bookstore67)) {
+        partial_result_.add_combination_(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, $_bookstore67, null, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -6597,10 +6679,10 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     combs_.generate_explicit_combinations_$_book66();
     comb_i_ = combs_.combinations.iterator();
     while (comb_i_.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
       $_Book0_interface_ $_book66 = $$$_one_combination_$$$.$_book66;
       if (partial_guard_2_($_book66)) {
-        partial_result_.add_combination_(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book66, null, null, my_specification_));
+        partial_result_.add_combination_(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book66, null, null, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -6614,11 +6696,29 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     combs_.generate_explicit_combinations_$_bookstore67();
     comb_i_ = combs_.combinations.iterator();
     while (comb_i_.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
       $_Book0_interface_ $_book66 = $$$_one_combination_$$$.$_book66;
       $_Bookstore4_interface_ $_bookstore67 = $$$_one_combination_$$$.$_bookstore67;
       if (partial_guard_3_($_book66, $_bookstore67)) {
-        partial_result_.add_combination_(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book66, $_bookstore67, null, my_specification_));
+        partial_result_.add_combination_(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, $_book66, $_bookstore67, null, my_specification_));
+      }
+    }
+    partial_result_.remove_invalid_combinations_();
+    combs_ = combs_.combine(partial_result_);
+    if (combs_.empty()) {
+      enabled_bit_ = false;
+      return false;
+    }
+    partial_result_.clear();
+    combs_.generate_explicit_combinations_$_shopkeeper65();
+    combs_.generate_explicit_combinations_$_bookstore67();
+    comb_i_ = combs_.combinations.iterator();
+    while (comb_i_.hasNext()) {
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_Shopkeeper5_interface_ $_shopkeeper65 = $$$_one_combination_$$$.$_shopkeeper65;
+      $_Bookstore4_interface_ $_bookstore67 = $$$_one_combination_$$$.$_bookstore67;
+      if (partial_guard_4_($_shopkeeper65, $_bookstore67)) {
+        partial_result_.add_combination_(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, null, $_bookstore67, null, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -6632,11 +6732,11 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     combs_.generate_explicit_combinations_$_system68();
     comb_i_ = combs_.combinations.iterator();
     while (comb_i_.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) comb_i_.next();
       $_Shopkeeper5_interface_ $_shopkeeper65 = $$$_one_combination_$$$.$_shopkeeper65;
       $_System3_interface_ $_system68 = $$$_one_combination_$$$.$_system68;
-      if (partial_guard_4_($_shopkeeper65, $_system68)) {
-        partial_result_.add_combination_(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, null, null, $_system68, my_specification_));
+      if (partial_guard_5_($_shopkeeper65, $_system68)) {
+        partial_result_.add_combination_(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, null, null, $_system68, my_specification_));
       }
     }
     partial_result_.remove_invalid_combinations_();
@@ -6650,15 +6750,15 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     return enabled_bit_;
   }
   public void initialize_execute($_Shopkeeper5_interface_ $_shopkeeper65, $_Book0_interface_ $_book66, $_Bookstore4_interface_ $_bookstore67, $_System3_interface_ $_system68, Parameter_real_ $_now69) throws Assertion_exception_ {
-    rhs_56 = (new DisCo_int_(-1));
+    rhs_60 = (new DisCo_int_(-1));
   }
 
   public void actual_execute($_Shopkeeper5_interface_ $_shopkeeper65, $_Book0_interface_ $_book66, $_Bookstore4_interface_ $_bookstore67, $_System3_interface_ $_system68, Parameter_real_ $_now69) throws Assertion_exception_ {
     try {
-      $_book66.set_$_owned_bookstore31_(rhs_56.get_val_());
-      Iterator iEL57 = my_specification_.getEngineListeners_();
-      while(iEL57.hasNext()) {
-        ((EngineListener)(iEL57.next())).objectStateChanged((DisCo_class_)$_book66);
+      $_book66.set_$_owned_bookstore31_(rhs_60.get_val_());
+      Iterator iEL61 = my_specification_.getEngineListeners_();
+      while(iEL61.hasNext()) {
+        ((EngineListener)(iEL61.next())).objectStateChanged((DisCo_class_)$_book66);
       }
       my_specification_.rt_.set_omega_($_now69.realval);
       return;
@@ -6674,9 +6774,9 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
   }
 
   public void reset_action_() {
-    my_specification_.debug_("Reset action remove_book_to_store(Shopkeeper, Book, Bookstore, System)");
+    my_specification_.debug_("Reset action remove_book_from_store(Shopkeeper, Book, Bookstore, System)");
     eval_guard_();
-    selected_combination_ = new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(my_specification_);
+    selected_combination_ = new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(my_specification_);
   }
 
   public Vector get_roles_and_formal_parameters_() {
@@ -6706,7 +6806,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     if(param_number == 4){
       selected_combination_.$_now69.realval = value.realval;
       selected_combination_.$_now69.set_by_user_ = true;
-      my_specification_.debug_("Setting actual parameter now for action remove_book_to_store(Shopkeeper, Book, Bookstore, System)");
+      my_specification_.debug_("Setting actual parameter now for action remove_book_from_store(Shopkeeper, Book, Bookstore, System)");
     } else {
       new Assertion(false,"Illegal param number for set_actual_parameter_");
     }
@@ -6718,7 +6818,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     if(param_number == 4){
       selected_combination_.$_now69 = new Parameter_real_();
       selected_combination_.$_now69.set_by_user_ = false;
-      my_specification_.debug_("Unsetting actual parameter now for action remove_book_to_store(Shopkeeper, Book, Bookstore, System)");
+      my_specification_.debug_("Unsetting actual parameter now for action remove_book_from_store(Shopkeeper, Book, Bookstore, System)");
     } else {
       new Assertion(false,"Illegal param number for unset_actual_parameter_");
     }
@@ -6729,14 +6829,14 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
   public boolean pick_participants_() {
     enabled_for_.generate_explicit_combinations_();
     enabled_for_.filter_participants_(selected_combination_);
-    my_specification_.debug_("Picking participants for remove_book_to_store(Shopkeeper, Book, Bookstore, System) from combinations");
+    my_specification_.debug_("Picking participants for remove_book_from_store(Shopkeeper, Book, Bookstore, System) from combinations");
     enabled_for_.debug_();
     Vector combs_vector_ = enabled_for_.to_vector_of_combination_();
     if(combs_vector_.size() == 0){
       my_specification_.debug_("No combination found");
       return false;
     }
-    selected_combination_ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) (combs_vector_.elementAt(my_specification_.rand_.nextInt(combs_vector_.size())));
+    selected_combination_ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) (combs_vector_.elementAt(my_specification_.rand_.nextInt(combs_vector_.size())));
     my_specification_.debug_("The drawn combination: ");
     selected_combination_.debug_();
     return true;
@@ -6748,7 +6848,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     new Assertion(selected_combination_.$_book66 != null, "Participant $_book66 == null");
     new Assertion(selected_combination_.$_bookstore67 != null, "Participant $_bookstore67 == null");
     new Assertion(selected_combination_.$_system68 != null, "Participant $_system68 == null");
-    $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb = enabled_for_.pick_actual_parameters_(selected_combination_);
+    $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb = enabled_for_.pick_actual_parameters_(selected_combination_);
     if(comb == null){
       return false;
     } else {
@@ -6765,7 +6865,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
     return enabled_for_.to_vector_();
   }
   public void execute_action_() throws Assertion_exception_ {
-    my_specification_.debug_("Executing action remove_book_to_store(Shopkeeper, Book, Bookstore, System) for");
+    my_specification_.debug_("Executing action remove_book_from_store(Shopkeeper, Book, Bookstore, System) for");
     selected_combination_.debug_();
     execute(selected_combination_.$_shopkeeper65, selected_combination_.$_book66, selected_combination_.$_bookstore67, selected_combination_.$_system68, selected_combination_.$_now69);
   }
@@ -6790,31 +6890,31 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$ 
   }
 
   public void clear_participants_() {
-    selected_combination_ = new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, null, null, my_specification_);
+    selected_combination_ = new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, null, null, my_specification_);
   }
   public void fix_parameters_() {
     for(Iterator iter = enabled_for_.combinations.iterator(); iter.hasNext(); ){
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb_ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb_ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if (!comb_.$_now69.setValue()) {
-        new Assertion(false, "Cannot fix parameter 'now' for action remove_book_to_store(Shopkeeper, Book, Bookstore, System)");
+        new Assertion(false, "Cannot fix parameter 'now' for action remove_book_from_store(Shopkeeper, Book, Bookstore, System)");
       }
     }
     enabled_for_.remove_invalid_combinations_();
   }
 }
 
-class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ implements Serializable {
+class Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ implements Serializable {
   Set combinations = new TreeSet();
 
   DisCo_specification_ my_specification_ = null;
-  public Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(DisCo_specification_ my_specification) {
+  public Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(DisCo_specification_ my_specification) {
     my_specification_ = my_specification;
-    combinations.add(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, null, null, my_specification_));
+    combinations.add(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, null, null, my_specification_));
   }
 
   public void generate_explicit_combinations_$_shopkeeper65() {
     Set TMP_combinations = new TreeSet();    for (Iterator iter = combinations.iterator(); iter.hasNext(); ) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if( $$$_ccc_$$$.$_shopkeeper65 == null ) {
         $$$_ccc_$$$.set_invalid_();
         TMP_combinations.addAll($$$_ccc_$$$.generate_explicit_combinations_$_shopkeeper65() );
@@ -6825,7 +6925,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
   }
   public void generate_explicit_combinations_$_book66() {
     Set TMP_combinations = new TreeSet();    for (Iterator iter = combinations.iterator(); iter.hasNext(); ) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if( $$$_ccc_$$$.$_book66 == null ) {
         $$$_ccc_$$$.set_invalid_();
         TMP_combinations.addAll($$$_ccc_$$$.generate_explicit_combinations_$_book66() );
@@ -6836,7 +6936,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
   }
   public void generate_explicit_combinations_$_bookstore67() {
     Set TMP_combinations = new TreeSet();    for (Iterator iter = combinations.iterator(); iter.hasNext(); ) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if( $$$_ccc_$$$.$_bookstore67 == null ) {
         $$$_ccc_$$$.set_invalid_();
         TMP_combinations.addAll($$$_ccc_$$$.generate_explicit_combinations_$_bookstore67() );
@@ -6847,7 +6947,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
   }
   public void generate_explicit_combinations_$_system68() {
     Set TMP_combinations = new TreeSet();    for (Iterator iter = combinations.iterator(); iter.hasNext(); ) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if( $$$_ccc_$$$.$_system68 == null ) {
         $$$_ccc_$$$.set_invalid_();
         TMP_combinations.addAll($$$_ccc_$$$.generate_explicit_combinations_$_system68() );
@@ -6864,36 +6964,36 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
     tmp_combinations = new TreeSet();
     combs_iter_ = combinations.iterator();
     while (combs_iter_.hasNext()) {
-      tmp_combinations.addAll((($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_shopkeeper65());
+      tmp_combinations.addAll((($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_shopkeeper65());
     }
     combinations = tmp_combinations;
 
     tmp_combinations = new TreeSet();
     combs_iter_ = combinations.iterator();
     while (combs_iter_.hasNext()) {
-      tmp_combinations.addAll((($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_book66());
+      tmp_combinations.addAll((($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_book66());
     }
     combinations = tmp_combinations;
 
     tmp_combinations = new TreeSet();
     combs_iter_ = combinations.iterator();
     while (combs_iter_.hasNext()) {
-      tmp_combinations.addAll((($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_bookstore67());
+      tmp_combinations.addAll((($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_bookstore67());
     }
     combinations = tmp_combinations;
 
     tmp_combinations = new TreeSet();
     combs_iter_ = combinations.iterator();
     while (combs_iter_.hasNext()) {
-      tmp_combinations.addAll((($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_system68());
+      tmp_combinations.addAll((($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)combs_iter_.next()).generate_explicit_combinations_$_system68());
     }
     combinations = tmp_combinations;
 
   }
 
-  public void filter_participants_($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb){
+  public void filter_participants_($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb){
     for (Iterator iter = combinations.iterator(); iter.hasNext(); ){
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_ccc_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if(comb.$_shopkeeper65 != null && (($_Shopkeeper5) (comb.$_shopkeeper65)).objectID_ != (($_Shopkeeper5) ($$$_ccc_$$$.$_shopkeeper65)).objectID_){
         $$$_ccc_$$$.set_invalid_();
       }
@@ -6913,13 +7013,13 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
   public void debug_() {
     my_specification_.debug_("Combinations: ");
     for(Iterator iter = combinations.iterator(); iter.hasNext(); ){
-      (($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next()).debug_();
+      (($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next()).debug_();
     }
   }
 
-  public $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ pick_actual_parameters_($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ selected_combination) {
+  public $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ pick_actual_parameters_($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ selected_combination) {
     for(Iterator iter = combinations.iterator(); iter.hasNext(); ){
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) (iter.next());
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) (iter.next());
       if(comb.equal_participants_(selected_combination)){
         return comb;
       }
@@ -6931,7 +7031,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
     Vector result_ = new Vector();
     Iterator  iter = combinations.iterator();
     while(iter.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_  comb_to_add_ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_  comb_to_add_ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       result_.addElement(comb_to_add_);
     }
     return result_;
@@ -6941,7 +7041,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
     Vector result_ = new Vector();
     Iterator  iter = combinations.iterator();
     while(iter.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb_to_add_ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb_to_add_ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       result_.addElement(comb_to_add_.to_vector_());
     }
     return result_;
@@ -6951,7 +7051,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
     combinations = new TreeSet();
   }
 
-  public void add_combination_($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb_) {
+  public void add_combination_($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ comb_) {
     combinations.add(comb_);
   }
 
@@ -6959,17 +7059,17 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
     return combinations.isEmpty();
   }
 
-  public Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ combine(Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ other_) {
-    Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ result = new Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
+  public Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ combine(Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ other_) {
+    Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_ result = new Combinations_$_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_(my_specification_);
 
     result.clear();
     Iterator myelems = combinations.iterator();
     while (myelems.hasNext()) {
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ mycomb = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) myelems.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ mycomb = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) myelems.next();
       Iterator otherselems = other_.combinations.iterator();
       while (otherselems.hasNext()) {
-        $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ otherscomb = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) otherselems.next();
-        $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ resultcomb = mycomb.combine(otherscomb);
+        $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ otherscomb = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) otherselems.next();
+        $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ resultcomb = mycomb.combine(otherscomb);
         if (resultcomb != null) {
           result.combinations.add(resultcomb);
         }
@@ -6983,7 +7083,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
   public void remove_invalid_combinations_() {
     Set TMP_combinations = new TreeSet();
     for(Iterator iter = combinations.iterator(); iter.hasNext(); ){
-      $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ c = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
+      $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ c = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_) iter.next();
       if (!c.invalid_()) {
         TMP_combinations.add(c);
       }
@@ -6992,7 +7092,7 @@ class Combinations_$_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$
   }
 }
 
-class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ implements Serializable, Comparable {
+class $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ implements Serializable, Comparable {
   boolean invalid_ = false;
   $_Shopkeeper5_interface_ $_shopkeeper65 = null;
   $_Book0_interface_ $_book66 = null;
@@ -7001,11 +7101,11 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
   Parameter_real_ $_now69 = new Parameter_real_();
   DisCo_specification_ my_specification_ = null;
 
-  public $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(DisCo_specification_ my_specification) {
+  public $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(DisCo_specification_ my_specification) {
     my_specification_ = my_specification;
   }
 
-  public $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_Shopkeeper5_interface_ $_shopkeeper65, $_Book0_interface_ $_book66, $_Bookstore4_interface_ $_bookstore67, $_System3_interface_ $_system68, DisCo_specification_ my_specification) {
+  public $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_Shopkeeper5_interface_ $_shopkeeper65, $_Book0_interface_ $_book66, $_Bookstore4_interface_ $_bookstore67, $_System3_interface_ $_system68, DisCo_specification_ my_specification) {
     this.$_shopkeeper65 = $_shopkeeper65;
     this.$_book66 = $_book66;
     this.$_bookstore67 = $_bookstore67;
@@ -7019,7 +7119,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
   }
 
   public int compareTo(Object o){
-    $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_other_$$$ = ($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)o;
+    $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ $$$_other_$$$ = ($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_)o;
     DisCo_class_ $$_other_$_shopkeeper65 = ((DisCo_class_) $$$_other_$$$.$_shopkeeper65);
     DisCo_class_ $$_other_$_book66 = ((DisCo_class_) $$$_other_$$$.$_book66);
     DisCo_class_ $$_other_$_bookstore67 = ((DisCo_class_) $$$_other_$$$.$_bookstore67);
@@ -7068,7 +7168,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
     if($_shopkeeper65 == null){
       Enumeration iter_ = my_specification_.get_objects_("$_Shopkeeper5").elements();
       while(iter_.hasMoreElements()){
-        ret.add(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(($_Shopkeeper5_interface_)iter_.nextElement(), $_book66, $_bookstore67, $_system68, my_specification_));
+        ret.add(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(($_Shopkeeper5_interface_)iter_.nextElement(), $_book66, $_bookstore67, $_system68, my_specification_));
       }
     } else {
       ret.add(this);
@@ -7081,7 +7181,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
     if($_book66 == null){
       Enumeration iter_ = my_specification_.get_objects_("$_Book0").elements();
       while(iter_.hasMoreElements()){
-        ret.add(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, ($_Book0_interface_)iter_.nextElement(), $_bookstore67, $_system68, my_specification_));
+        ret.add(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, ($_Book0_interface_)iter_.nextElement(), $_bookstore67, $_system68, my_specification_));
       }
     } else {
       ret.add(this);
@@ -7094,7 +7194,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
     if($_bookstore67 == null){
       Enumeration iter_ = my_specification_.get_objects_("$_Bookstore4").elements();
       while(iter_.hasMoreElements()){
-        ret.add(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, $_book66, ($_Bookstore4_interface_)iter_.nextElement(), $_system68, my_specification_));
+        ret.add(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, $_book66, ($_Bookstore4_interface_)iter_.nextElement(), $_system68, my_specification_));
       }
     } else {
       ret.add(this);
@@ -7107,7 +7207,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
     if($_system68 == null){
       Enumeration iter_ = my_specification_.get_objects_("$_System3").elements();
       while(iter_.hasMoreElements()){
-        ret.add(new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, $_book66, $_bookstore67, ($_System3_interface_)iter_.nextElement(), my_specification_));
+        ret.add(new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, $_book66, $_bookstore67, ($_System3_interface_)iter_.nextElement(), my_specification_));
       }
     } else {
       ret.add(this);
@@ -7124,7 +7224,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
        + "now=" + ($_now69 == null ? "<any>" : $_now69.toString()) + ", ");
   }
 
-  public boolean equal_participants_($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ trial) {
+  public boolean equal_participants_($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ trial) {
     return $_shopkeeper65 != null && $_shopkeeper65 == trial.$_shopkeeper65  && $_book66 != null && $_book66 == trial.$_book66  && $_bookstore67 != null && $_bookstore67 == trial.$_bookstore67  && $_system68 != null && $_system68 == trial.$_system68 ;
   }
 
@@ -7137,8 +7237,8 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
     return result_;
   }
 
-  public $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ clone_() {
-    return new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, $_book66, $_bookstore67, $_system68, my_specification_);
+  public $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ clone_() {
+    return new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_($_shopkeeper65, $_book66, $_bookstore67, $_system68, my_specification_);
   }
 
   public boolean invalid_() {
@@ -7151,8 +7251,8 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
     return invalid_;
   }
 
-  public $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ combine($_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ other_) {
-    $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ result_ = new $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, null, null, my_specification_);
+  public $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ combine($_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ other_) {
+    $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_ result_ = new $_remove_book_from_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_combination_(null, null, null, null, my_specification_);
     if ($_shopkeeper65 == null) {
       result_.$_shopkeeper65 = other_.$_shopkeeper65;
     }
@@ -7204,7 +7304,7 @@ class $_remove_book_to_store$$$_Shopkeeper5$$$_Book0$$$_Bookstore4$$$_System3$$_
 class $_login_customer$$$_Customer2$$$_System3$$ extends DisCo_action_ {
   Combinations_$_login_customer$$$_Customer2$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_58;
+  DisCo_int_ rhs_62;
   public $_login_customer$$$_Customer2$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -7287,15 +7387,15 @@ class $_login_customer$$$_Customer2$$$_System3$$ extends DisCo_action_ {
     return enabled_bit_;
   }
   public void initialize_execute($_Customer2_interface_ $_customer70, $_System3_interface_ $_system71, Parameter_real_ $_now72) throws Assertion_exception_ {
-    rhs_58 = (new DisCo_int_(((DisCo_class_)$_customer70).objectID_));
+    rhs_62 = (new DisCo_int_(((DisCo_class_)$_customer70).objectID_));
   }
 
   public void actual_execute($_Customer2_interface_ $_customer70, $_System3_interface_ $_system71, Parameter_real_ $_now72) throws Assertion_exception_ {
     try {
-      $_system71.set_$_active_customer22_(rhs_58.get_val_());
-      Iterator iEL59 = my_specification_.getEngineListeners_();
-      while(iEL59.hasNext()) {
-        ((EngineListener)(iEL59.next())).objectStateChanged((DisCo_class_)$_system71);
+      $_system71.set_$_active_customer22_(rhs_62.get_val_());
+      Iterator iEL63 = my_specification_.getEngineListeners_();
+      while(iEL63.hasNext()) {
+        ((EngineListener)(iEL63.next())).objectStateChanged((DisCo_class_)$_system71);
       }
       my_specification_.rt_.set_omega_($_now72.realval);
       return;
@@ -7710,7 +7810,7 @@ class $_login_customer$$$_Customer2$$$_System3$$_combination_ implements Seriali
 class $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$ extends DisCo_action_ {
   Combinations_$_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_60;
+  DisCo_int_ rhs_64;
   public $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -7722,7 +7822,7 @@ class $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$ extends DisCo_action_ {
     $_Shopkeeper5_interface_ $_shopkeeper73 = selected_combination_.$_shopkeeper73;
     $_System3_interface_ $_system74 = selected_combination_.$_system74;
     Parameter_real_ $_now75 = selected_combination_.$_now75;
-    return (((($_system74.get_$_active_customer22_().op_eq_((new DisCo_int_(-1)))).op_and_(($_system74.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_system74.get_$_active_admin24_().op_eq_((new DisCo_int_(-1))))))).get_val_(false);
+    return ((((($_system74.get_$_active_customer22_().op_eq_((new DisCo_int_(-1)))).op_and_(($_system74.get_$_active_shopkeeper23_().op_eq_((new DisCo_int_(-1)))))).op_and_(($_system74.get_$_active_admin24_().op_eq_((new DisCo_int_(-1)))))).op_and_(new DisCo_bool_($_shopkeeper73.get_$_registed37_() instanceof $_Shopkeeper5.$_yes21)))).get_val_(false);
   }
   //Partial guards from noParamsTable_
   public boolean partial_guard_1_($_System3_interface_ $_system74) {
@@ -7735,6 +7835,10 @@ class $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$ extends DisCo_action_ {
   //Partial guards from noParamsTable_
   public boolean partial_guard_3_($_System3_interface_ $_system74) {
     return ($_system74.get_$_active_admin24_().op_eq_((new DisCo_int_(-1)))).get_val_(false);
+  }
+  //Partial guards from noParamsTable_
+  public boolean partial_guard_4_($_Shopkeeper5_interface_ $_shopkeeper73) {
+    return new DisCo_bool_($_shopkeeper73.get_$_registed37_() instanceof $_Shopkeeper5.$_yes21).get_val_(false);
   }
   public boolean eval_guard_() {
     Combinations_$_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_ combs_ = new Combinations_$_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_(my_specification_);
@@ -7788,20 +7892,36 @@ class $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$ extends DisCo_action_ {
       enabled_bit_ = false;
       return false;
     }
+    partial_result_.clear();
+    combs_.generate_explicit_combinations_$_shopkeeper73();
+    comb_i_ = combs_.combinations.iterator();
+    while (comb_i_.hasNext()) {
+      $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_combination_ $$$_one_combination_$$$ = ($_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_combination_) comb_i_.next();
+      $_Shopkeeper5_interface_ $_shopkeeper73 = $$$_one_combination_$$$.$_shopkeeper73;
+      if (partial_guard_4_($_shopkeeper73)) {
+        partial_result_.add_combination_(new $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_combination_($_shopkeeper73, null, my_specification_));
+      }
+    }
+    partial_result_.remove_invalid_combinations_();
+    combs_ = combs_.combine(partial_result_);
+    if (combs_.empty()) {
+      enabled_bit_ = false;
+      return false;
+    }
     enabled_for_ = combs_;
     enabled_bit_ = !combs_.empty();
     return enabled_bit_;
   }
   public void initialize_execute($_Shopkeeper5_interface_ $_shopkeeper73, $_System3_interface_ $_system74, Parameter_real_ $_now75) throws Assertion_exception_ {
-    rhs_60 = (new DisCo_int_(((DisCo_class_)$_shopkeeper73).objectID_));
+    rhs_64 = (new DisCo_int_(((DisCo_class_)$_shopkeeper73).objectID_));
   }
 
   public void actual_execute($_Shopkeeper5_interface_ $_shopkeeper73, $_System3_interface_ $_system74, Parameter_real_ $_now75) throws Assertion_exception_ {
     try {
-      $_system74.set_$_active_shopkeeper23_(rhs_60.get_val_());
-      Iterator iEL61 = my_specification_.getEngineListeners_();
-      while(iEL61.hasNext()) {
-        ((EngineListener)(iEL61.next())).objectStateChanged((DisCo_class_)$_system74);
+      $_system74.set_$_active_shopkeeper23_(rhs_64.get_val_());
+      Iterator iEL65 = my_specification_.getEngineListeners_();
+      while(iEL65.hasNext()) {
+        ((EngineListener)(iEL65.next())).objectStateChanged((DisCo_class_)$_system74);
       }
       my_specification_.rt_.set_omega_($_now75.realval);
       return;
@@ -8216,7 +8336,7 @@ class $_login_shopkeeper$$$_Shopkeeper5$$$_System3$$_combination_ implements Ser
 class $_login_admin$$$_Admin6$$$_System3$$ extends DisCo_action_ {
   Combinations_$_login_admin$$$_Admin6$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_62;
+  DisCo_int_ rhs_66;
   public $_login_admin$$$_Admin6$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -8299,15 +8419,15 @@ class $_login_admin$$$_Admin6$$$_System3$$ extends DisCo_action_ {
     return enabled_bit_;
   }
   public void initialize_execute($_Admin6_interface_ $_admin76, $_System3_interface_ $_system77, Parameter_real_ $_now78) throws Assertion_exception_ {
-    rhs_62 = (new DisCo_int_(((DisCo_class_)$_admin76).objectID_));
+    rhs_66 = (new DisCo_int_(((DisCo_class_)$_admin76).objectID_));
   }
 
   public void actual_execute($_Admin6_interface_ $_admin76, $_System3_interface_ $_system77, Parameter_real_ $_now78) throws Assertion_exception_ {
     try {
-      $_system77.set_$_active_admin24_(rhs_62.get_val_());
-      Iterator iEL63 = my_specification_.getEngineListeners_();
-      while(iEL63.hasNext()) {
-        ((EngineListener)(iEL63.next())).objectStateChanged((DisCo_class_)$_system77);
+      $_system77.set_$_active_admin24_(rhs_66.get_val_());
+      Iterator iEL67 = my_specification_.getEngineListeners_();
+      while(iEL67.hasNext()) {
+        ((EngineListener)(iEL67.next())).objectStateChanged((DisCo_class_)$_system77);
       }
       my_specification_.rt_.set_omega_($_now78.realval);
       return;
@@ -8722,8 +8842,8 @@ class $_login_admin$$$_Admin6$$$_System3$$_combination_ implements Serializable,
 class $_logout_customer$$$_Customer2$$$_System3$$ extends DisCo_action_ {
   Combinations_$_logout_customer$$$_Customer2$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_64;
-  DisCo_int_ rhs_65;
+  DisCo_int_ rhs_68;
+  DisCo_int_ rhs_69;
   public $_logout_customer$$$_Customer2$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -8768,21 +8888,21 @@ class $_logout_customer$$$_Customer2$$$_System3$$ extends DisCo_action_ {
     return enabled_bit_;
   }
   public void initialize_execute($_Customer2_interface_ $_customer79, $_System3_interface_ $_system80, Parameter_real_ $_now81) throws Assertion_exception_ {
-    rhs_64 = (new DisCo_int_(-1));
-    rhs_65 = (new DisCo_int_(-1));
+    rhs_68 = (new DisCo_int_(-1));
+    rhs_69 = (new DisCo_int_(-1));
   }
 
   public void actual_execute($_Customer2_interface_ $_customer79, $_System3_interface_ $_system80, Parameter_real_ $_now81) throws Assertion_exception_ {
     try {
-      $_system80.set_$_active_customer22_(rhs_64.get_val_());
-      Iterator iEL66 = my_specification_.getEngineListeners_();
-      while(iEL66.hasNext()) {
-        ((EngineListener)(iEL66.next())).objectStateChanged((DisCo_class_)$_system80);
+      $_system80.set_$_active_customer22_(rhs_68.get_val_());
+      Iterator iEL70 = my_specification_.getEngineListeners_();
+      while(iEL70.hasNext()) {
+        ((EngineListener)(iEL70.next())).objectStateChanged((DisCo_class_)$_system80);
       }
-      $_customer79.set_$_browsing_currently35_(rhs_65.get_val_());
-      Iterator iEL67 = my_specification_.getEngineListeners_();
-      while(iEL67.hasNext()) {
-        ((EngineListener)(iEL67.next())).objectStateChanged((DisCo_class_)$_customer79);
+      $_customer79.set_$_browsing_currently35_(rhs_69.get_val_());
+      Iterator iEL71 = my_specification_.getEngineListeners_();
+      while(iEL71.hasNext()) {
+        ((EngineListener)(iEL71.next())).objectStateChanged((DisCo_class_)$_customer79);
       }
       my_specification_.rt_.set_omega_($_now81.realval);
       return;
@@ -9197,7 +9317,7 @@ class $_logout_customer$$$_Customer2$$$_System3$$_combination_ implements Serial
 class $_logout_shopkeeper$$$_Shopkeeper5$$$_System3$$ extends DisCo_action_ {
   Combinations_$_logout_shopkeeper$$$_Shopkeeper5$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_68;
+  DisCo_int_ rhs_72;
   public $_logout_shopkeeper$$$_Shopkeeper5$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -9242,15 +9362,15 @@ class $_logout_shopkeeper$$$_Shopkeeper5$$$_System3$$ extends DisCo_action_ {
     return enabled_bit_;
   }
   public void initialize_execute($_Shopkeeper5_interface_ $_shopkeeper82, $_System3_interface_ $_system83, Parameter_real_ $_now84) throws Assertion_exception_ {
-    rhs_68 = (new DisCo_int_(-1));
+    rhs_72 = (new DisCo_int_(-1));
   }
 
   public void actual_execute($_Shopkeeper5_interface_ $_shopkeeper82, $_System3_interface_ $_system83, Parameter_real_ $_now84) throws Assertion_exception_ {
     try {
-      $_system83.set_$_active_shopkeeper23_(rhs_68.get_val_());
-      Iterator iEL69 = my_specification_.getEngineListeners_();
-      while(iEL69.hasNext()) {
-        ((EngineListener)(iEL69.next())).objectStateChanged((DisCo_class_)$_system83);
+      $_system83.set_$_active_shopkeeper23_(rhs_72.get_val_());
+      Iterator iEL73 = my_specification_.getEngineListeners_();
+      while(iEL73.hasNext()) {
+        ((EngineListener)(iEL73.next())).objectStateChanged((DisCo_class_)$_system83);
       }
       my_specification_.rt_.set_omega_($_now84.realval);
       return;
@@ -9665,7 +9785,7 @@ class $_logout_shopkeeper$$$_Shopkeeper5$$$_System3$$_combination_ implements Se
 class $_logout_admin$$$_Admin6$$$_System3$$ extends DisCo_action_ {
   Combinations_$_logout_admin$$$_Admin6$$$_System3$$_ enabled_for_;
 
-  DisCo_int_ rhs_70;
+  DisCo_int_ rhs_74;
   public $_logout_admin$$$_Admin6$$$_System3$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -9710,15 +9830,15 @@ class $_logout_admin$$$_Admin6$$$_System3$$ extends DisCo_action_ {
     return enabled_bit_;
   }
   public void initialize_execute($_Admin6_interface_ $_admin85, $_System3_interface_ $_system86, Parameter_real_ $_now87) throws Assertion_exception_ {
-    rhs_70 = (new DisCo_int_(-1));
+    rhs_74 = (new DisCo_int_(-1));
   }
 
   public void actual_execute($_Admin6_interface_ $_admin85, $_System3_interface_ $_system86, Parameter_real_ $_now87) throws Assertion_exception_ {
     try {
-      $_system86.set_$_active_admin24_(rhs_70.get_val_());
-      Iterator iEL71 = my_specification_.getEngineListeners_();
-      while(iEL71.hasNext()) {
-        ((EngineListener)(iEL71.next())).objectStateChanged((DisCo_class_)$_system86);
+      $_system86.set_$_active_admin24_(rhs_74.get_val_());
+      Iterator iEL75 = my_specification_.getEngineListeners_();
+      while(iEL75.hasNext()) {
+        ((EngineListener)(iEL75.next())).objectStateChanged((DisCo_class_)$_system86);
       }
       my_specification_.rt_.set_omega_($_now87.realval);
       return;
@@ -10133,8 +10253,8 @@ class $_logout_admin$$$_Admin6$$$_System3$$_combination_ implements Serializable
 class $_admin_register_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$ extends DisCo_action_ {
   Combinations_$_admin_register_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$_ enabled_for_;
 
-  $_yes21_interface_ rhs_72;
-  DisCo_int_ rhs_73;
+  $_yes21_interface_ rhs_76;
+  DisCo_int_ rhs_77;
   public $_admin_register_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -10201,21 +10321,21 @@ class $_admin_register_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Booksto
     return enabled_bit_;
   }
   public void initialize_execute($_System3_interface_ $_system88, $_Admin6_interface_ $_admin89, $_Shopkeeper5_interface_ $_shopkeeper90, $_Bookstore4_interface_ $_bookstore91, Parameter_real_ $_now92) throws Assertion_exception_ {
-    rhs_72 = new $_Shopkeeper5.$_yes21();
-    rhs_73 = (new DisCo_int_(((DisCo_class_)$_shopkeeper90).objectID_));
+    rhs_76 = new $_Shopkeeper5.$_yes21();
+    rhs_77 = (new DisCo_int_(((DisCo_class_)$_shopkeeper90).objectID_));
   }
 
   public void actual_execute($_System3_interface_ $_system88, $_Admin6_interface_ $_admin89, $_Shopkeeper5_interface_ $_shopkeeper90, $_Bookstore4_interface_ $_bookstore91, Parameter_real_ $_now92) throws Assertion_exception_ {
     try {
-      $_shopkeeper90.set_$_registed37_((DisCo_type_) rhs_72);
-      Iterator iEL74 = my_specification_.getEngineListeners_();
-      while(iEL74.hasNext()) {
-        ((EngineListener)(iEL74.next())).objectStateChanged((DisCo_class_)$_shopkeeper90);
+      $_shopkeeper90.set_$_registed37_((DisCo_type_) rhs_76);
+      Iterator iEL78 = my_specification_.getEngineListeners_();
+      while(iEL78.hasNext()) {
+        ((EngineListener)(iEL78.next())).objectStateChanged((DisCo_class_)$_shopkeeper90);
       }
-      $_bookstore91.set_$_owner25_(rhs_73.get_val_());
-      Iterator iEL75 = my_specification_.getEngineListeners_();
-      while(iEL75.hasNext()) {
-        ((EngineListener)(iEL75.next())).objectStateChanged((DisCo_class_)$_bookstore91);
+      $_bookstore91.set_$_owner25_(rhs_77.get_val_());
+      Iterator iEL79 = my_specification_.getEngineListeners_();
+      while(iEL79.hasNext()) {
+        ((EngineListener)(iEL79.next())).objectStateChanged((DisCo_class_)$_bookstore91);
       }
       my_specification_.rt_.set_omega_($_now92.realval);
       return;
@@ -10761,7 +10881,7 @@ class $_admin_register_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Booksto
 class $_admin_add_new_bookstore$$$_System3$$$_Admin6$$$_Bookstore4$$ extends DisCo_action_ {
   Combinations_$_admin_add_new_bookstore$$$_System3$$$_Admin6$$$_Bookstore4$$_ enabled_for_;
 
-  $_yes7_interface_ rhs_76;
+  $_yes7_interface_ rhs_80;
   public $_admin_add_new_bookstore$$$_System3$$$_Admin6$$$_Bookstore4$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -10827,15 +10947,15 @@ class $_admin_add_new_bookstore$$$_System3$$$_Admin6$$$_Bookstore4$$ extends Dis
     return enabled_bit_;
   }
   public void initialize_execute($_System3_interface_ $_system93, $_Admin6_interface_ $_admin94, $_Bookstore4_interface_ $_bookstore95, Parameter_real_ $_now96) throws Assertion_exception_ {
-    rhs_76 = new $_Bookstore4.$_yes7();
+    rhs_80 = new $_Bookstore4.$_yes7();
   }
 
   public void actual_execute($_System3_interface_ $_system93, $_Admin6_interface_ $_admin94, $_Bookstore4_interface_ $_bookstore95, Parameter_real_ $_now96) throws Assertion_exception_ {
     try {
-      $_bookstore95.set_$_created26_((DisCo_type_) rhs_76);
-      Iterator iEL77 = my_specification_.getEngineListeners_();
-      while(iEL77.hasNext()) {
-        ((EngineListener)(iEL77.next())).objectStateChanged((DisCo_class_)$_bookstore95);
+      $_bookstore95.set_$_created26_((DisCo_type_) rhs_80);
+      Iterator iEL81 = my_specification_.getEngineListeners_();
+      while(iEL81.hasNext()) {
+        ((EngineListener)(iEL81.next())).objectStateChanged((DisCo_class_)$_bookstore95);
       }
       my_specification_.rt_.set_omega_($_now96.realval);
       return;
@@ -11315,8 +11435,8 @@ class $_admin_add_new_bookstore$$$_System3$$$_Admin6$$$_Bookstore4$$_combination
 class $_admin_delete_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$ extends DisCo_action_ {
   Combinations_$_admin_delete_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$_ enabled_for_;
 
-  $_no8_interface_ rhs_78;
-  $_no20_interface_ rhs_79;
+  $_no8_interface_ rhs_82;
+  $_no20_interface_ rhs_83;
   public $_admin_delete_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -11385,21 +11505,21 @@ class $_admin_delete_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore
     return enabled_bit_;
   }
   public void initialize_execute($_System3_interface_ $_system97, $_Admin6_interface_ $_admin98, $_Shopkeeper5_interface_ $_shopkeeper99, $_Bookstore4_interface_ $_bookstore100, Parameter_real_ $_now101) throws Assertion_exception_ {
-    rhs_78 = new $_Bookstore4.$_no8();
-    rhs_79 = new $_Shopkeeper5.$_no20();
+    rhs_82 = new $_Bookstore4.$_no8();
+    rhs_83 = new $_Shopkeeper5.$_no20();
   }
 
   public void actual_execute($_System3_interface_ $_system97, $_Admin6_interface_ $_admin98, $_Shopkeeper5_interface_ $_shopkeeper99, $_Bookstore4_interface_ $_bookstore100, Parameter_real_ $_now101) throws Assertion_exception_ {
     try {
-      $_bookstore100.set_$_created26_((DisCo_type_) rhs_78);
-      Iterator iEL80 = my_specification_.getEngineListeners_();
-      while(iEL80.hasNext()) {
-        ((EngineListener)(iEL80.next())).objectStateChanged((DisCo_class_)$_bookstore100);
+      $_bookstore100.set_$_created26_((DisCo_type_) rhs_82);
+      Iterator iEL84 = my_specification_.getEngineListeners_();
+      while(iEL84.hasNext()) {
+        ((EngineListener)(iEL84.next())).objectStateChanged((DisCo_class_)$_bookstore100);
       }
-      $_shopkeeper99.set_$_registed37_((DisCo_type_) rhs_79);
-      Iterator iEL81 = my_specification_.getEngineListeners_();
-      while(iEL81.hasNext()) {
-        ((EngineListener)(iEL81.next())).objectStateChanged((DisCo_class_)$_shopkeeper99);
+      $_shopkeeper99.set_$_registed37_((DisCo_type_) rhs_83);
+      Iterator iEL85 = my_specification_.getEngineListeners_();
+      while(iEL85.hasNext()) {
+        ((EngineListener)(iEL85.next())).objectStateChanged((DisCo_class_)$_shopkeeper99);
       }
       my_specification_.rt_.set_omega_($_now101.realval);
       return;
@@ -11945,9 +12065,9 @@ class $_admin_delete_shopkeeper$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore
 class $_admin_add_shopkeeper_to_bookstore$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$ extends DisCo_action_ {
   Combinations_$_admin_add_shopkeeper_to_bookstore$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$_ enabled_for_;
 
-  $_yes7_interface_ rhs_82;
-  $_yes21_interface_ rhs_83;
-  DisCo_int_ rhs_84;
+  $_yes7_interface_ rhs_86;
+  $_yes21_interface_ rhs_87;
+  DisCo_int_ rhs_88;
   public $_admin_add_shopkeeper_to_bookstore$$$_System3$$$_Admin6$$$_Shopkeeper5$$$_Bookstore4$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -12034,27 +12154,27 @@ class $_admin_add_shopkeeper_to_bookstore$$$_System3$$$_Admin6$$$_Shopkeeper5$$$
     return enabled_bit_;
   }
   public void initialize_execute($_System3_interface_ $_system102, $_Admin6_interface_ $_admin103, $_Shopkeeper5_interface_ $_shopkeeper104, $_Bookstore4_interface_ $_bookstore105, Parameter_real_ $_now106) throws Assertion_exception_ {
-    rhs_82 = new $_Bookstore4.$_yes7();
-    rhs_83 = new $_Shopkeeper5.$_yes21();
-    rhs_84 = (new DisCo_int_(((DisCo_class_)$_shopkeeper104).objectID_));
+    rhs_86 = new $_Bookstore4.$_yes7();
+    rhs_87 = new $_Shopkeeper5.$_yes21();
+    rhs_88 = (new DisCo_int_(((DisCo_class_)$_shopkeeper104).objectID_));
   }
 
   public void actual_execute($_System3_interface_ $_system102, $_Admin6_interface_ $_admin103, $_Shopkeeper5_interface_ $_shopkeeper104, $_Bookstore4_interface_ $_bookstore105, Parameter_real_ $_now106) throws Assertion_exception_ {
     try {
-      $_bookstore105.set_$_created26_((DisCo_type_) rhs_82);
-      Iterator iEL85 = my_specification_.getEngineListeners_();
-      while(iEL85.hasNext()) {
-        ((EngineListener)(iEL85.next())).objectStateChanged((DisCo_class_)$_bookstore105);
+      $_bookstore105.set_$_created26_((DisCo_type_) rhs_86);
+      Iterator iEL89 = my_specification_.getEngineListeners_();
+      while(iEL89.hasNext()) {
+        ((EngineListener)(iEL89.next())).objectStateChanged((DisCo_class_)$_bookstore105);
       }
-      $_shopkeeper104.set_$_registed37_((DisCo_type_) rhs_83);
-      Iterator iEL86 = my_specification_.getEngineListeners_();
-      while(iEL86.hasNext()) {
-        ((EngineListener)(iEL86.next())).objectStateChanged((DisCo_class_)$_shopkeeper104);
+      $_shopkeeper104.set_$_registed37_((DisCo_type_) rhs_87);
+      Iterator iEL90 = my_specification_.getEngineListeners_();
+      while(iEL90.hasNext()) {
+        ((EngineListener)(iEL90.next())).objectStateChanged((DisCo_class_)$_shopkeeper104);
       }
-      $_bookstore105.set_$_owner25_(rhs_84.get_val_());
-      Iterator iEL87 = my_specification_.getEngineListeners_();
-      while(iEL87.hasNext()) {
-        ((EngineListener)(iEL87.next())).objectStateChanged((DisCo_class_)$_bookstore105);
+      $_bookstore105.set_$_owner25_(rhs_88.get_val_());
+      Iterator iEL91 = my_specification_.getEngineListeners_();
+      while(iEL91.hasNext()) {
+        ((EngineListener)(iEL91.next())).objectStateChanged((DisCo_class_)$_bookstore105);
       }
       my_specification_.rt_.set_omega_($_now106.realval);
       return;
@@ -12600,7 +12720,7 @@ class $_admin_add_shopkeeper_to_bookstore$$$_System3$$$_Admin6$$$_Shopkeeper5$$$
 class $_search$$$_System3$$$_Book0$$$_Bookstore4$$$_Customer2$$ extends DisCo_action_ {
   Combinations_$_search$$$_System3$$$_Book0$$$_Bookstore4$$$_Customer2$$_ enabled_for_;
 
-  DisCo_int_ rhs_88;
+  DisCo_int_ rhs_92;
   public $_search$$$_System3$$$_Book0$$$_Bookstore4$$$_Customer2$$(int id, DisCo_specification_ my_specification) {
     super(id, my_specification);
   }
@@ -12667,15 +12787,15 @@ class $_search$$$_System3$$$_Book0$$$_Bookstore4$$$_Customer2$$ extends DisCo_ac
     return enabled_bit_;
   }
   public void initialize_execute($_System3_interface_ $_system107, $_Book0_interface_ $_book108, $_Bookstore4_interface_ $_bookstore109, $_Customer2_interface_ $_customer110, Parameter_real_ $_now111) throws Assertion_exception_ {
-    rhs_88 = (new DisCo_int_(((DisCo_class_)$_book108).objectID_));
+    rhs_92 = (new DisCo_int_(((DisCo_class_)$_book108).objectID_));
   }
 
   public void actual_execute($_System3_interface_ $_system107, $_Book0_interface_ $_book108, $_Bookstore4_interface_ $_bookstore109, $_Customer2_interface_ $_customer110, Parameter_real_ $_now111) throws Assertion_exception_ {
     try {
-      $_customer110.set_$_browsing_currently35_(rhs_88.get_val_());
-      Iterator iEL89 = my_specification_.getEngineListeners_();
-      while(iEL89.hasNext()) {
-        ((EngineListener)(iEL89.next())).objectStateChanged((DisCo_class_)$_customer110);
+      $_customer110.set_$_browsing_currently35_(rhs_92.get_val_());
+      Iterator iEL93 = my_specification_.getEngineListeners_();
+      while(iEL93.hasNext()) {
+        ((EngineListener)(iEL93.next())).objectStateChanged((DisCo_class_)$_customer110);
       }
       my_specification_.rt_.set_omega_($_now111.realval);
       return;

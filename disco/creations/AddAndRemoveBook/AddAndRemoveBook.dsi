@@ -1,0 +1,51 @@
+instance AddAndRemoveBook of exercise is 
+
+  object System_1 of System is
+    active_customer := null;
+    active_shopkeeper := null;
+    active_admin := null;
+  end
+  object Shopkeeper_1 of Shopkeeper is
+    registed := enum no(
+    );
+  end
+  object Bookstore_1 of Bookstore is
+    owner := null;
+    created := enum yes(
+    );
+  end
+  object Book_1_1 of Book is
+    owned_bookstore := null;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Book_1_2 of Book is
+    owned_bookstore := null;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Book_1_3 of Book is
+    owned_bookstore := null;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Book_1_4 of Book is
+    owned_bookstore := null;
+    owned_customer := null;
+    in_basket := null;
+    name := enum OfficerWithAGoal(
+    );
+  end
+  object Admin_1 of Admin is
+  end
+
+
+  omega := +0.0;
+  deadlines := {};
+end

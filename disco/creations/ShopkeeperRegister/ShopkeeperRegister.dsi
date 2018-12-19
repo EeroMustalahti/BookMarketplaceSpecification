@@ -1,0 +1,32 @@
+instance ShopkeeperRegister of exercise is 
+
+  object Shopkeeper_1 of Shopkeeper is
+    registed := enum no(
+    );
+  end
+  object System_1 of System is
+    active_customer := null;
+    active_shopkeeper := null;
+    active_admin := null;
+  end
+  object Shopkeeper_2 of Shopkeeper is
+    registed := enum no(
+    );
+  end
+  object Admin_1 of Admin is
+  end
+  object Bookstore_1 of Bookstore is
+    owner := null;
+    created := enum yes(
+    );
+  end
+  object Bookstore_2 of Bookstore is
+    owner := null;
+    created := enum yes(
+    );
+  end
+
+
+  omega := +0.0;
+  deadlines := {};
+end

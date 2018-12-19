@@ -24,9 +24,9 @@ BOOKS[a:BookStates][b:BookStates][c:BookStates] = (
  |when(b==1) book_b.buy     -> BOOKS[a][3][c]
  |when(c==1) book_c.buy     -> BOOKS[a][b][3]
 
- |when(a==3) book_a.new_book     -> BOOKS[0][b][c]        // The book is bought
- |when(b==3) book_b.new_book     -> BOOKS[a][0][c]
- |when(c==3) book_c.new_book     -> BOOKS[a][b][0]
+ |when(a==3) book_a.new_book-> BOOKS[0][b][c]        // Make new book sellable
+ |when(b==3) book_b.new_book-> BOOKS[a][0][c]
+ |when(c==3) book_c.new_book-> BOOKS[a][b][0]
 ).
 
 BASKET(A=0,B=0,C=0,INFO=0) = BASKET[A][B][C][INFO],  // Basket can contain all the system's books
